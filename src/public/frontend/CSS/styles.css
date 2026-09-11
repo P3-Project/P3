@@ -1,0 +1,57 @@
+*{
+    --background-color: #4b4a4a;
+    --text-color: #f5f5f5;
+    --link-color: #f5f5f5;
+    --link-hover-color: #f5f5f5;
+    --border-color: #f5f5f5;
+    --box-shadow-color: #f5f5f5;
+    --primary-color: #f5f5f5;
+    --hover-color: #f5f5f5;
+    --secondary-color: #f5f5f5;
+    --tertiary-color: #f5f5f5;
+
+
+    --scrollbar-track-color: #4b4a4a;
+    --scrollbar-border-color: #4b4a4a;
+    --scrollbar-thumb-color: #fff;
+    --scrollbar-thumb-hover-color: #f5f5f5;
+}
+
+/* Scroll Behavior Start */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-track-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb-color);
+    border-radius: 6px;
+    border: 3px solid var(--scrollbar-border-color);
+    transition: border 0.3s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--scrollbar-thumb-hover-color);
+    border: 3px solid var(--scrollbar-thumb-color);
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* Scroll Behavior End */
+
+
+
+
+body{
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 200vh;
+}
