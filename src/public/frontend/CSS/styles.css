@@ -1,57 +1,190 @@
-*{
-    --background-color: #4b4a4a;
-    --text-color: #f5f5f5;
-    --link-color: #f5f5f5;
-    --link-hover-color: #f5f5f5;
-    --border-color: #f5f5f5;
-    --box-shadow-color: #f5f5f5;
-    --primary-color: #f5f5f5;
-    --hover-color: #f5f5f5;
-    --secondary-color: #f5f5f5;
-    --tertiary-color: #f5f5f5;
+* {
+  box-sizing: border-box;
 
+  --background-color: #ffffff;
+  --text-color: #111111;
+  --link-color: #002147;
+  --link-hover-color: #0b3d7a;
+  --border-color: #c9c6c4;
+  --box-shadow-color: rgba(0, 0, 0, 0.15);
+  --primary-color: #002147;
+  --hover-color: #e8e5e3;
+  --secondary-color: #f5f3f2;
+  --tertiary-color: #8a8785;
+  --danger-color: #c00000;
 
-    --scrollbar-track-color: #4b4a4a;
-    --scrollbar-border-color: #4b4a4a;
-    --scrollbar-thumb-color: #fff;
-    --scrollbar-thumb-hover-color: #f5f5f5;
+  --scrollbar-track-color: #f5f3f2;
+  --scrollbar-border-color: #f5f3f2;
+  --scrollbar-thumb-color: #c9c6c4;
+  --scrollbar-thumb-hover-color: #8a8785;
 }
 
 /* Scroll Behavior Start */
 ::-webkit-scrollbar {
-    width: 10px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--scrollbar-track-color);
+  background: var(--scrollbar-track-color);
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--scrollbar-thumb-color);
-    border-radius: 6px;
-    border: 3px solid var(--scrollbar-border-color);
-    transition: border 0.3s ease-in-out;
+  background-color: var(--scrollbar-thumb-color);
+  border-radius: 6px;
+  border: 3px solid var(--scrollbar-border-color);
+  transition: border 0.3s ease-in-out;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: var(--scrollbar-thumb-hover-color);
-    border: 3px solid var(--scrollbar-thumb-color);
+  background-color: var(--scrollbar-thumb-hover-color);
+  border: 3px solid var(--scrollbar-thumb-color);
 }
 
-html{
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }
 
 /* Scroll Behavior End */
 
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
 
+/* Waiter: topbar og ordrelinje */
+.topbar,
+.orderbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+.topbar {
+  height: 56px;
+}
+.orderbar {
+  height: 72px;
+  background: var(--secondary-color);
+}
+.orderbar-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.orderbar h1 {
+  margin: 0;
+  font-size: 36px;
+}
+.brand {
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
 
+/* Waiter: Menu og ordre */
+.layout {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  min-height: 0;
+}
 
-body{
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    height: 200vh;
+.menu {
+  padding: 16x;
+  overflow-y: auto;
+}
+
+.categories {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.order {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  border-left: 1px solid var(--border-color);
+}
+.order-header {
+  display: grid;
+  grid-template-columns: 1fr 120px 80px;
+  padding: 12px 16px;
+  background: var(--secondary-color);
+  border-bottom: 1px solid var(--border-color);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.order-lines {
+  flex: 1;
+  overflow-y: auto;
+}
+.order-footer {
+  padding: 16px;
+  background: var(--secondary-color);
+  border-top: 1px solid var(--border-color);
+}
+.total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+.actions {
+  display: flex;
+  gap: 12px;
+}
+/* knapper */
+button {
+  min-height: 56px;
+  padding: 0 20px;
+  font: inherit;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 1px solid var(--primary-color);
+  background: var(--background-color);
+  color: var(--text-color);
+  cursor: pointer;
+}
+button:hover {
+  background: var(--hover-color);
+}
+
+#change-table-btn {
+  min-height: 40px;
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+#send-btn {
+  flex: 1;
+  background: var(--primary-color);
+  color: #fff;
+}
+#send-btn:hover {
+  background: var(--link-hover-color);
+}
+
+#cancel-btn {
+  color: var(--danger-color);
+  border-color: var(--danger-color);
+}
+
+.menu {
+  background: #ffdddd;
 }
