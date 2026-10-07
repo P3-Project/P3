@@ -1,0 +1,145 @@
+@import url(/src/public/frontend/CSS/home.css);
+
+/* Waiter: topbar og ordrelinje */
+.topbar,
+.orderbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.topbar {
+    height: 56px;
+}
+
+.orderbar {
+    height: 72px;
+    background: var(--secondary-color);
+}
+
+.orderbar-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.orderbar h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+.brand {
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+/* Waiter: Menu og ordre */
+.layout {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    min-height: 0;
+}
+
+.menu {
+    padding: 16x;
+    overflow-y: auto;
+}
+
+.categories {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.order {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    border-left: 1px solid var(--border-color);
+}
+
+.order-header {
+    display: grid;
+    grid-template-columns: 1fr 120px 80px;
+    padding: 12px 16px;
+    background: var(--secondary-color);
+    border-bottom: 1px solid var(--border-color);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.order-lines {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.order-footer {
+    padding: 16px;
+    background: var(--secondary-color);
+    border-top: 1px solid var(--border-color);
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+}
+
+/* knapper */
+button {
+    min-height: 56px;
+    padding: 0 20px;
+    font: inherit;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 1px solid var(--primary-color);
+    background: var(--background-color);
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--hover-color);
+}
+
+#change-table-btn {
+    min-height: 40px;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+#send-btn {
+    flex: 1;
+    background: var(--primary-color);
+    color: #fff;
+}
+
+#send-btn:hover {
+    background: var(--link-hover-color);
+}
+
+#cancel-btn {
+    color: var(--danger-color);
+    border-color: var(--danger-color);
+}
+
+.menu {
+    background: #ffdddd;
+}
