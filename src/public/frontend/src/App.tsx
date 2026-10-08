@@ -1,32 +1,23 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import { Button } from "./components/ui/button"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "./components/ui/card"
-import './App.css'
+import { useMenu } from "@/features/menu/useMenu";
 
+export default function App(){
+  const { data: dishes, isLoading, error} = useMenu();
 
-function App() {
+  // Three states every data page needs: loading, error, data
+  if(isLoading) return <p>Indlæser menu...</p>
+  if(error) return <p>Fejl: {error.message}</p>
+
   return (
-    <Card className="max-w-sm">
-      <CardHeader>
-        <CardTitle>Project Overview</CardTitle>
-        <CardDescription>
-          Track progress and recent activity for your Vite app.
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        Your design system is ready. Start building your next component.
-      </CardContent>
-    </Card>
-  )
+    <main style={{padding: 24}}>
+      <h1>Menukort</h1>
+      <ul>
+        {dishes?.map((dish) =>(
+          // Key helps React track list items, use the database id
+          <li key={dish.id}>
+            {dish.name} - {dish.price} kr. - {dish.ingredients}
+          </li>
+        ))}
+      </ul>
+    </main>
+  );
 }
- 
-export default App

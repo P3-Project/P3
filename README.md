@@ -17,8 +17,8 @@ This project is a restaurant management system built for Pandrup Pizza & Steak H
 <!-- TODO: fill in when the tech stack is final -->
 - Java (version: 26.0.2.1)
 - Node.js (version: 24.21.0)
-- TODO: build tool (Maven)
-- TODO: database
+- Maven, build tool
+- Docker Desktop, database
 
 ### Installation
 To install the project on a local machine, download the repository by clicking on the green **Code** button at the top of this repository page and choosing **Download ZIP**. Unzip the file wherever you want.
@@ -40,7 +40,24 @@ Follow instructions on the website or use the download link below:
 Download Link: `https://nodejs.org/dist/v24.21.0/node-v24.21.0-x64.msi`
 
 ### Running the application
-Go to the frontend folder
+#### Run the backend
+First of all, open the docker desktop app.
+Go to the backend folder directory
+```sh
+$ cd src/public/backend # go to the backend directory
+$ ./mvnw spring-boot:run # may take a few minutes to ready up, then the backend is up and running
+```
+
+#### Automate the backend server
+Start a new terminal and go the backend directory again.
+```sh
+$ cd src/public/backend # go to the backend directory
+$ ./mvnw compile # spring in the other terminal restarts in a few seconds = live local server, wihtout the need of restart after changes
+```
+
+
+#### Run the frontend
+Go to the frontend folder directory
 ```sh
 $ cd src/public/frontend # go to the vite project
 $ npm install # only needed the first time, or after pulling new packages
