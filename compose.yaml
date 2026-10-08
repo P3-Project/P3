@@ -1,0 +1,15 @@
+# Defines the database container for the whole group
+services:
+  db:
+    image: postgres:18              # same PostgreSQL version for everyone
+    environment:
+      POSTGRES_DB: ppsh             # database is created automatically
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}   # read from the .env file below
+    ports:
+      - "5432:5432"                 # makes it reachable on localhost:5432
+    volumes:
+      - pgdata:/var/lib/postgresql  # keeps data when the container stops
+
+volumes:
+  pgdata:

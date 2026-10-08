@@ -15,8 +15,9 @@ This project is a restaurant management system built for Pandrup Pizza & Steak H
 
 ### Dependencies
 <!-- TODO: fill in when the tech stack is final -->
-- Java (version: TODO)
-- TODO: build tool (Maven / Gradle)
+- Java (version: 26.0.2.1)
+- Node.js (version: 24.21.0)
+- TODO: build tool (Maven)
 - TODO: database
 
 ### Installation
@@ -28,14 +29,44 @@ Alternatively, clone the GitHub repo in the desired location:
 $ git clone https://github.com/P3-Project/P3.git
 ```
 
+
+### Installing Node.js
+`Node.js` version used in this project: `v24.21.0`
+
+Follow instructions on the website or use the download link below:
+`https://nodejs.org/en/download`
+
+
+Download Link: `https://nodejs.org/dist/v24.21.0/node-v24.21.0-x64.msi`
+
 ### Running the application
-<!-- TODO: replace with the real build/run commands -->
+Go to the frontend folder
 ```sh
-$ TODO: build command
-$ TODO: run command
+$ cd src/public/frontend # go to the vite project
+$ npm install # only needed the first time, or after pulling new packages
+$ npm run dev # starts the development server `ctrl + c` to terminate the server in terminal
 ```
 
-Then open `http://localhost:TODO` in your browser.
+Other useful commands
+```sh
+$ npm run build # makes an optimised version in dist/
+$ npm run preview # serves that built version locally to check it works
+$ npm install <package> # add a library, e.g. npm install date-fns
+$ npm install -D <package> # add a dev-only tool
+$ npm uninstall <package> # remove a library
+```
+
+Shadcn components (The generate, and not hardcode part)
+```sh
+$ npx shadcn@latest add dialog # generate one component into src/components/ui/
+$ npx shadcn@latest add tabs badge # several at once
+```
+
+When things are weird or broken
+```sh
+$ npm ci # wipe node_modules and reinstall exactly from package-lock.json
+$ npm outdated # see which packages have newer versions
+```
 
 ## Contributing
 
