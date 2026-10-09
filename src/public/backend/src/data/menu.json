@@ -1,0 +1,1702 @@
+[ {
+  "category" : "Pizza",
+  "number" : "1",
+  "name" : "MARGHERITA",
+  "description" : "med tomatsauce, 2 x ost og oregano",
+  "price" : 79,
+  "priceText" : "79,-",
+  "lunchOffer" : true,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "2",
+  "name" : "MORO",
+  "description" : "med tomatsauce, ost, skinke og oregano",
+  "price" : 85,
+  "priceText" : "85,-",
+  "lunchOffer" : true,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "2A",
+  "name" : "PEPPERONI",
+  "description" : "med tomatsauce, ost, pepperoni og oregano",
+  "price" : 85,
+  "priceText" : "85,-",
+  "lunchOffer" : true,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "3",
+  "name" : "CARBONARA",
+  "description" : "med tomatsauce, ost, kødsauce, spaghetti, cocktailpølser og oregano",
+  "price" : 99,
+  "priceText" : "99,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "4",
+  "name" : "HAWAII",
+  "description" : "med tomatsauce, ost, skinke, ananas og oregano",
+  "price" : 89,
+  "priceText" : "89,-",
+  "lunchOffer" : true,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "5",
+  "name" : "VESUVIO",
+  "description" : "med tomatsauce, ost, skinke, pepperoni, cocktailpølser og oregano",
+  "price" : 103,
+  "priceText" : "103,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "6",
+  "name" : "PIZZA BOLOGNESE",
+  "description" : "med tomatsauce, ost, kødsauce, løg og oregano",
+  "price" : 89,
+  "priceText" : "89,-",
+  "lunchOffer" : true,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "7",
+  "name" : "AMERIKANER",
+  "description" : "med tomatsauce, ost, oksefars og oregano",
+  "price" : 85,
+  "priceText" : "85,-",
+  "lunchOffer" : true,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "8",
+  "name" : "CALZONE (INDBAGT)",
+  "description" : "med tomatsauce, ost, skinke og oregano",
+  "price" : 85,
+  "priceText" : "85,-",
+  "lunchOffer" : true,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "9",
+  "name" : "CAPRICCIOSA",
+  "description" : "med tomatsauce, ost, skinke, champignon og oregano .",
+  "price" : 89,
+  "priceText" : "89,-",
+  "lunchOffer" : true,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "10",
+  "name" : "HUSETS PIZZA",
+  "description" : "med tomatsauce, ost, kebab, bearnaisesauce, spejlæg, løg og oregano",
+  "price" : 89,
+  "priceText" : "89,-",
+  "lunchOffer" : true,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "11",
+  "name" : "MARCO",
+  "description" : "med tomatsauce, ost, skinke, pepperoni, bearnaisesauce og oregano",
+  "price" : 103,
+  "priceText" : "103,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "12",
+  "name" : "BABAS",
+  "description" : "med tomatsauce, ost, kødsauce, stegt bacon, løg, grøn peber og oregano",
+  "price" : 98,
+  "priceText" : "98,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "13",
+  "name" : "CIAO CIAO (INDBAGT)",
+  "description" : "med tomatsauce, ost, kebab, løg, bearnaisesauce og oregano",
+  "price" : 89,
+  "priceText" : "89,-",
+  "lunchOffer" : true,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "14",
+  "name" : "SALAT PIZZA",
+  "description" : "med tomatsauce, ost, løg, pepperoni, kebab, salat, agurk, tomat og cremefraichedressing",
+  "price" : 104,
+  "priceText" : "104,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "15",
+  "name" : "GORGONZOLA",
+  "description" : "med tomatsauce, ost, kebab, gorgonzola og oregano",
+  "price" : 92,
+  "priceText" : "92,-",
+  "lunchOffer" : true,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "16",
+  "name" : "VIKING (INDBAGT)",
+  "description" : "med tomat, ost, kebab, løg, champignon, chilisauce, hvidløg og oregano",
+  "price" : 95,
+  "priceText" : "95,-",
+  "lunchOffer" : true,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "17",
+  "name" : "SIMONS PIZZA",
+  "description" : "med tomatsauce, ost, oksefars, jalapeños, oliven, gorgonzola og oregano",
+  "price" : 103,
+  "priceText" : "103,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "18",
+  "name" : "QUATTRO STAGIONI",
+  "description" : "med tomatsauce, ost, skinke, rejer, champignon og oregano",
+  "price" : 103,
+  "priceText" : "103,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "19",
+  "name" : "MEXICANO",
+  "description" : "med tomatsauce, ost, oksefars, rød peber, løg og oregano",
+  "price" : 92,
+  "priceText" : "92,-",
+  "lunchOffer" : true,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "20",
+  "name" : "LIMFJORD",
+  "description" : "med tomatsauce, ost, champignon, rejer, tun, muslinger og oregano",
+  "price" : 104,
+  "priceText" : "104,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "21",
+  "name" : "MEATLOVER",
+  "description" : "med tomatsauce, ost, kødsauce, skinke, kebab, pepperoni, kylling, cocktailpølser, stegt bacon og oregan",
+  "price" : 134,
+  "priceText" : "134,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "22",
+  "name" : "FIRAT",
+  "description" : "med tomatsauce, ost, skinke, stegt bacon, kebab, chilisauce og oregano",
+  "price" : 100,
+  "priceText" : "100,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "23",
+  "name" : "VEGETAR",
+  "description" : "pizza med tomatsauce, ost, champignon, løg, majs, peber, asparges, ananas og oregano",
+  "price" : 100,
+  "priceText" : "100,-",
+  "lunchOffer" : true,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "24",
+  "name" : "BOTAN",
+  "description" : "med tomatsauce, ost, skinke, kødsauce, kebab, rød peber, løg og oregano",
+  "price" : 109,
+  "priceText" : "109,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "25",
+  "name" : "MONTANARA",
+  "description" : "med tomatsauce, ost, oksefars, champignon, løg, hvidløg og oregano",
+  "price" : 92,
+  "priceText" : "92,-",
+  "lunchOffer" : true,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "26",
+  "name" : "BELLA DONNA",
+  "description" : "med tomatsauce, ost, kebab, champignon, løg og oregano",
+  "price" : 92,
+  "priceText" : "92,-",
+  "lunchOffer" : true,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "27",
+  "name" : "ROMA",
+  "description" : "med tomatsauce, ost, skinke, oksefars, løg og oregano",
+  "price" : 95,
+  "priceText" : "95,-",
+  "lunchOffer" : true,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "28",
+  "name" : "CARUSO",
+  "description" : "med tomatsauce, ost, skinke, stegt bacon, løg og oregano",
+  "price" : 95,
+  "priceText" : "95,-",
+  "lunchOffer" : true,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "29",
+  "name" : "KYLLINGEPIZZA",
+  "description" : "med tomatsauce, ost, løg, champignon, kylling, karry og oregano",
+  "price" : 89,
+  "priceText" : "89,-",
+  "lunchOffer" : true,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "30",
+  "name" : "VAN",
+  "description" : "med tomatsauce, ost, kebab, pepperoni, løg, oksefars og oregano",
+  "price" : 103,
+  "priceText" : "103,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "31",
+  "name" : "FARS PIZZA",
+  "description" : "med tomatsauce, ost, kylling, pepperoni, oksefars, bearnaisesauce og oregano",
+  "price" : 109,
+  "priceText" : "109,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "32",
+  "name" : "PIZZA SPAGHETTI (INDBAGT)",
+  "description" : "med tomatsauce, ost, spaghetti, kødsauce og oregano",
+  "price" : 93,
+  "priceText" : "93,-",
+  "lunchOffer" : true,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "33",
+  "name" : "PIZZA SOM DU SELV KOMBINERER",
+  "description" : "bund og tomatsauce + tilbehør",
+  "price" : 45,
+  "priceText" : "45,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "34",
+  "name" : "PANDRUP SPECIAL",
+  "description" : "med tomatsauce, ost, champignon, kebab, løg, stegt bacon, spejlæg, chilisauce, hvidløg og oregano",
+  "price" : 104,
+  "priceText" : "104,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "35",
+  "name" : "PALERMO",
+  "description" : "med tomatsauce, ost, løg, champignon, pepperoni og oregano",
+  "price" : 89,
+  "priceText" : "89,-",
+  "lunchOffer" : true,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "36",
+  "name" : "UFO 1 (DOBB. INDBAGT)",
+  "description" : "med tomatsauce, ost, skinke, kebab, champignon, pepperoni, bearnaise, chilli, hvidløg og oregano",
+  "price" : 114,
+  "priceText" : "114,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "36A",
+  "name" : "UFO 2 (DOBB. INDBAGT)",
+  "description" : "med tomatsauce, ost, kødsauce, spaghetti, cocktailpølser, champignon og oregano",
+  "price" : 114,
+  "priceText" : "114,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "111",
+  "name" : "BORAN",
+  "description" : "med tomatsauce, ost, stegt bacon, pepperoni, cocktailpølser og oregano",
+  "price" : 99,
+  "priceText" : "99,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "112",
+  "name" : "CHAPLIN",
+  "description" : "med tomatsauce, ost, oksefars, pepperoni, cocktailpølser og oregano",
+  "price" : 99,
+  "priceText" : "99,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "112A",
+  "name" : "AMED",
+  "description" : "med tomatsauce, ost, kebab, salatost, sucuk, frisk tomat (med i ovn), hvidløg og oregano",
+  "price" : 99,
+  "priceText" : "99,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "113",
+  "name" : "DIYAR",
+  "description" : "med tomatsauce, ost, sucuk, oksefars, løg, chilisauce og oregano",
+  "price" : 93,
+  "priceText" : "93,-",
+  "lunchOffer" : true,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "114",
+  "name" : "SHEVAL (KLAPPET SAMMEN)",
+  "description" : "med tomatsauce, ost, oksefars, chilisauce, salat, tomat, agurk og cremefraichedressing",
+  "price" : 94,
+  "priceText" : "94,-",
+  "lunchOffer" : true,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "115",
+  "name" : "VEGETAR",
+  "description" : "med tomatsauce, ost, spinat, friske tomater, mozzarella, rucolasalat og oregano",
+  "price" : 100,
+  "priceText" : "100,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "116",
+  "name" : "PIZZA BEARNAISE",
+  "description" : "med tomatsauce, ost, skinke, kylling, cocktailpølser, bearnaisesauce og oregano",
+  "price" : 104,
+  "priceText" : "104,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "117",
+  "name" : "FIKOS PIZZA",
+  "description" : "med tomatsauce, ost, kebab, rød peber, løg, chilisauce, cremefraichedressing og oregano",
+  "price" : 97,
+  "priceText" : "97,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "118",
+  "name" : "SPINAT",
+  "description" : "med tomatsauce, ost, oksefars, løg, rød peber, chilisauce, hvidløg, spinat, dressing og oregano",
+  "price" : 104,
+  "priceText" : "104,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "119",
+  "name" : "DINO",
+  "description" : "med tomatsauce, ost, kebab, oksefars, stegt bacon, grøn peber og oregano",
+  "price" : 103,
+  "priceText" : "103,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "135",
+  "name" : "SIDE",
+  "description" : "med tomatsauce, ost, kylling, sucuk, oksefars, bearnaisesauce og oregano",
+  "price" : 104,
+  "priceText" : "104,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "136",
+  "name" : "ATHENA",
+  "description" : "med tomatsauce, ost, salatost, oksefars, peberfrugt, løg, chili og oregano",
+  "price" : 104,
+  "priceText" : "104,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "137",
+  "name" : "ALFREDO",
+  "description" : "med tomatsauce, ost, kebab, oksefars, pepperoni, stegt bacon, cocktailpølser og oregano",
+  "price" : 114,
+  "priceText" : "114,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "138",
+  "name" : "MARCO POLO",
+  "description" : "med tomatsauce, ost, skinke, kebab, oksefars, cocktailpølser, chili og oregano",
+  "price" : 109,
+  "priceText" : "109,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "139",
+  "name" : "LUCA",
+  "description" : "med tomatsauce, ost, kebab, stegt bacon, oksefars, cocktailpølser, chili, hvidløg og oregano",
+  "price" : 109,
+  "priceText" : "109,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "145",
+  "name" : "FORMAGGIO",
+  "description" : "med tomatsauce, cheddar, feta, pizzaost, mozzarella og oregano",
+  "price" : 104,
+  "priceText" : "104,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "146",
+  "name" : "KING",
+  "description" : "med tomatsauce, ost, oksefiletstrimler, champignon, mozzarella, parmesanost, olivenolie, oregano og rucolasalat",
+  "price" : 114,
+  "priceText" : "114,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "147",
+  "name" : "TEXAS",
+  "description" : "med tomatsauce, ost, oksefiletstrimler, spaghetti, mozzarella, dressing og oregano",
+  "price" : 114,
+  "priceText" : "114,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "148",
+  "name" : "NEW YORK",
+  "description" : "med tomatsauce, ost, oksefilet strimler, rød pepper, bearnaise, chili, hvidløg og oregano",
+  "price" : 109,
+  "priceText" : "109,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "149",
+  "name" : "PIZZA POTATO",
+  "description" : "med tomatsauce, ost, kartoffel, kylling, løg, speciel flødesauce og oregano",
+  "price" : 109,
+  "priceText" : "109,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza",
+  "number" : "149A",
+  "name" : "POTATO KEBAB",
+  "description" : "med tomatsauce, ost, kartoffel, kebab, rød peber, speciel flødesauce og oregano",
+  "price" : 109,
+  "priceText" : "109,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza deluxe",
+  "number" : "124",
+  "name" : "TORINO",
+  "description" : "med tomatsauce, ost, serranoskinke, chorizo, chili, parmesanost, rucola og olivenolie",
+  "price" : 114,
+  "priceText" : "114,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza deluxe",
+  "number" : "125",
+  "name" : "VENEDIG",
+  "description" : "med tomatsauce, ost, serranoskinke, oksefars, chorizo, rucola og parmesanost",
+  "price" : 114,
+  "priceText" : "114,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza deluxe",
+  "number" : "126",
+  "name" : "MILANO",
+  "description" : "med tomatsauce, ost, serranoskinke, gorgonzola, oliven og oregano",
+  "price" : 104,
+  "priceText" : "104,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza deluxe",
+  "number" : "127",
+  "name" : "PARMA",
+  "description" : "med tomatsauce, ost, serranoskinke, oksefars, rucolasalat og oregano",
+  "price" : 104,
+  "priceText" : "104,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza deluxe",
+  "number" : "128",
+  "name" : "AZAD",
+  "description" : "med tomatsauce, ost, kebab, tomat, rucolasalat, cremefraichedressing, chili og oregano",
+  "price" : 103,
+  "priceText" : "103,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza deluxe",
+  "number" : "129",
+  "name" : "NAPOLI",
+  "description" : "med tomatsauce, ost, serranoskinke og oregano",
+  "price" : 99,
+  "priceText" : "99,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza deluxe",
+  "number" : "129A",
+  "name" : "BRESAOLA",
+  "description" : "med tomatsauce, ost, mozzarella, bresaola, tomater, rucola, olivenolie og parmesanost",
+  "price" : 114,
+  "priceText" : "114,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza deluxe",
+  "number" : "129B",
+  "name" : "DELUXE 1",
+  "description" : "med tomatsauce, ost, mozzarella, bresaola, serranoskinke, tomater, rucola, olivenolie og parmesanost",
+  "price" : 134,
+  "priceText" : "134,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza deluxe",
+  "number" : "150",
+  "name" : "KARTOFFELPIZZA 1",
+  "description" : "med tomatsauce, pesto, ost, mozzarella, kartoffel, spinat, serranoskinke, rucola og olivenolie",
+  "price" : 134,
+  "priceText" : "134,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza deluxe",
+  "number" : "151",
+  "name" : "KARTOFFELPIZZA 2",
+  "description" : "med tomatsauce, bearnaisesauce, pesto, ost, mozzarella, cheddar, kartoffel, kylling, rucola, chili og hvidløg",
+  "price" : 134,
+  "priceText" : "134,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Mexicansk pizza",
+  "number" : "101",
+  "name" : "AL PASO",
+  "description" : "med tomatsauce, ost, pepperoni, oksefars, jalapeno, løg, tacosauce og oregano",
+  "price" : 105,
+  "priceText" : "105,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Mexicansk pizza",
+  "number" : "102",
+  "name" : "AZTEKA",
+  "description" : "med tomatsauce, ost, kebab, kylling, jalapeno, rød peber, chilisauce, hvidløg, tacosauce og oregano",
+  "price" : 105,
+  "priceText" : "105,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Mexicansk pizza",
+  "number" : "103",
+  "name" : "ACAPULCO",
+  "description" : "med tomatsauce, ost, skinke, oksefars, jalapeno, rød peber, tacosauce og oregano",
+  "price" : 105,
+  "priceText" : "105,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Mexicansk pizza",
+  "number" : "104",
+  "name" : "AMIGO",
+  "description" : "med tomatsauce, ost, kebab, pepperoni, chilisauce, hvidløg, jalapeños og oregano",
+  "price" : 103,
+  "priceText" : "103,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Mexicansk pizza",
+  "number" : "104A",
+  "name" : "TIJUANA",
+  "description" : "med tomatsauce, ost, kødsauce, pepperoni, pølser, chilisauce, hvidløg, jalapeños og oregano",
+  "price" : 103,
+  "priceText" : "103,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Salat pizza",
+  "number" : "105",
+  "name" : "SALAT PIZZA",
+  "description" : "med tomatsauce, ost, oksefars, salat, agurk, tomat og cremefraichedressing",
+  "price" : 95,
+  "priceText" : "95,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Salat pizza",
+  "number" : "106",
+  "name" : "SALAT PIZZA",
+  "description" : "med tomatsauce, ost, skinke, salat, agurk, tomat og cremefraichedressing",
+  "price" : 95,
+  "priceText" : "95,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Salat pizza",
+  "number" : "107",
+  "name" : "SALAT PIZZA",
+  "description" : "med tomatsauce, ost, serranoskinke, salat, agurk, tomat og cremefraichedressing",
+  "price" : 104,
+  "priceText" : "104,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Salat pizza",
+  "number" : "108",
+  "name" : "SALAT PIZZA",
+  "description" : "med tomatsauce, ost, pepperoni, salat, agurk, tomat og cremefraichedressing",
+  "price" : 95,
+  "priceText" : "95,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Salat pizza",
+  "number" : "109",
+  "name" : "SALAT PIZZA",
+  "description" : "med tomatsauce, ost, kylling, salat, agurk, tomat og cremefraichedressing",
+  "price" : 95,
+  "priceText" : "95,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Salat pizza",
+  "number" : "110",
+  "name" : "SALAT PIZZA",
+  "description" : "med tomatsauce, ost, kødsauce, salat, agurk, tomat og cremefraichedressing",
+  "price" : 95,
+  "priceText" : "95,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Salat pizza",
+  "number" : "110A",
+  "name" : "SALAT PIZZA",
+  "description" : "med tomatsauce, ost, kebab, salat, agurk, tomat og cremefraichedressing",
+  "price" : 95,
+  "priceText" : "95,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Nachos pizza",
+  "number" : "180",
+  "name" : "PIZZA",
+  "description" : "med tomatsauce, ost, nachos, cheddarost, oksekød, jalapeños, salsa og oregano",
+  "price" : 104,
+  "priceText" : "104,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Nachos pizza",
+  "number" : "181",
+  "name" : "PIZZA",
+  "description" : "med tomatsauce, ost, nachos, cheddarost, kebab, jalapeños, salsa og oregano",
+  "price" : 104,
+  "priceText" : "104,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Nachos pizza",
+  "number" : "182",
+  "name" : "PIZZA",
+  "description" : "med tomatsauce, ost, nachos, cheddarost, kylling, jalapeños, salsa og oregano",
+  "price" : 104,
+  "priceText" : "104,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Nachos pizza",
+  "number" : "183",
+  "name" : "PIZZA",
+  "description" : "med tomatsauce, ost, nachos, cheddarost, pepperoni, jalapeños, salsa, dressing og oregano",
+  "price" : 108,
+  "priceText" : "108,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Nachos pizza",
+  "number" : "184",
+  "name" : "PIZZA",
+  "description" : "med tomatsauce, ost, nachos, cheddarost, kødsauce, jalapeños, salsa og oregano",
+  "price" : 104,
+  "priceText" : "104,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pulled pork pizza",
+  "number" : "201",
+  "name" : "PIZZA",
+  "description" : "med tomatsauce, ost, pulled pork med BBQ sauce, rødløg, cheddarost, paprika og oregano",
+  "price" : 104,
+  "priceText" : "104,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pulled pork pizza",
+  "number" : "202",
+  "name" : "PIZZA",
+  "description" : "med tomatsauce, ost, pulled pork med BBQ sauce, pepperoni, cheddarost, jalapeños og oregano",
+  "price" : 114,
+  "priceText" : "114,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pulled pork pizza",
+  "number" : "203",
+  "name" : "PIZZA",
+  "description" : "med tomatsauce, ost, pulled pork med BBQ sauce, cocktailpølser, stegt bacon, cheddarost, rødløg og oregano",
+  "price" : 114,
+  "priceText" : "114,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pulled pork pizza",
+  "number" : "204",
+  "name" : "PIZZA",
+  "description" : "med tomatsauce, ost, pulled pork med BBQ sauce, cheddarost, stegt bacon, kylling, frisk basilikum og oregano",
+  "price" : 114,
+  "priceText" : "114,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pulled pork pizza",
+  "number" : "205",
+  "name" : "PIZZA",
+  "description" : "med tomatsauce, ost, pulled pork med BBQ sauce, cheddarost, kødsauce, rød peber, chili, hvidløg og oregano",
+  "price" : 114,
+  "priceText" : "114,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza-sandwich",
+  "number" : null,
+  "name" : "HJEMMELAVET VARM PIZZA-SANDWICH",
+  "description" : "med ost, løg, salat, tomat, agurk og cremefraichedressing Vælg mellem kebab, kylling, skinke, rejer, tun og pepperoni",
+  "price" : 90,
+  "priceText" : "90.-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza-pommes frites",
+  "number" : null,
+  "name" : "PIZZA",
+  "description" : "med tomatsauce, ost, oregano, pommes frites, cremefraichedressing og hjemmelavet dressing Vælg mellem kebab, kylling, skinke, oksefars og pepperoni",
+  "price" : 104,
+  "priceText" : "104.-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pizza-pommes frites",
+  "number" : null,
+  "name" : "PIZZA",
+  "description" : "med tomatsauce, ost, oregano, pommes frites, salat, cremefraichedressing og hjemmelavet dressing Vælg mellem kebab, kylling, skinke, oksefars og pepperoni",
+  "price" : 120,
+  "priceText" : "120.-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Halv indbagt pizza",
+  "number" : "130",
+  "name" : "HALV INDBAGT",
+  "description" : "med tomatsauce, ost, kebab, gorgonzola, rejer, løg, bearnaisesauce og oregano",
+  "price" : 103,
+  "priceText" : "103.-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Halv indbagt pizza",
+  "number" : "131",
+  "name" : "HALV INDBAGT",
+  "description" : "med tomatsauce, ost, kebab, bacon, skinke, chilisauce og oregano",
+  "price" : 103,
+  "priceText" : "103.-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Halv indbagt pizza",
+  "number" : "132",
+  "name" : "HALV INDBAGT",
+  "description" : "med tomatsauce, ost, oksefars, bacon, kylling, rød peber og oregano",
+  "price" : 103,
+  "priceText" : "103.-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Halv indbagt pizza",
+  "number" : "133",
+  "name" : "HALV INDBAGT",
+  "description" : "med tomatsauce, ost, kylling, serranoskinke, rucolasalat, cremefraichedressing og oregano",
+  "price" : 104,
+  "priceText" : "104.-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Halv indbagt pizza",
+  "number" : "134",
+  "name" : "HALV INDBAGT",
+  "description" : "med tomatsauce, ost, skinke, spagetti, pølser, bearnaisesauce og oregano",
+  "price" : 103,
+  "priceText" : "103.-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Durum",
+  "number" : "83",
+  "name" : "DURUM",
+  "description" : "stort hjemmebagt fladbrød med kebab, champignon, rødløg, rød og grøn peber, tomatsauce, salat, tomat, agurk, creme fraiche- og hjemmelavet dressing - rullet sammen",
+  "price" : 109,
+  "priceText" : "109.-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Durum",
+  "number" : "83A",
+  "name" : "DURUM",
+  "description" : "stort hjemmebagt fladbrød med kebab, rødløg, salat, tomat, agurk, creme fraiche- og hjemmelavet dressing - rullet sammen",
+  "price" : 95,
+  "priceText" : "95.-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Durum",
+  "number" : "83B",
+  "name" : "DURUM",
+  "description" : "stort hjemmebagt fladbrød med kylling, rødløg, salat, tomat, agurk, creme fraiche- og hjemmelavet dressing - rullet sammen",
+  "price" : 95,
+  "priceText" : "95.-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Durum",
+  "number" : "83C",
+  "name" : "DURUM MED POMMES FRITES",
+  "description" : "stort hjemmebagt fladbrød med kebab, rødløg, pommes frites, salat, tomat, agurk, creme fraiche- og hjemmelavet dressing - rullet sammen",
+  "price" : 109,
+  "priceText" : "109.-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Durum",
+  "number" : "83D",
+  "name" : "DURUM MED ADANA KEBAB (STÆRK)",
+  "description" : "stort hjemmebagt fladbrød med 2 stk. adana kebab, rødløg, salat, tomat, agurk, creme fraiche- og hjemmelavet dressing - rullet sammen",
+  "price" : 109,
+  "priceText" : "109.-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Kebab-specialiteter",
+  "number" : "40A",
+  "name" : "KEBAB-SPECIAL (LILLE)",
+  "description" : "kebab, pommes frites, tomat, agurk, salat og hjemmelavet dressing",
+  "price" : 85,
+  "priceText" : "85.-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Kebab-specialiteter",
+  "number" : "40B",
+  "name" : "KEBAB-SPECIAL (STOR)",
+  "description" : "kebab, pommes frites, tomat, agurk, salat og hjemmelavet dressing",
+  "price" : 109,
+  "priceText" : "109.-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Kebab-specialiteter",
+  "number" : "40C",
+  "name" : "INDBAGT KEBAB",
+  "description" : "kebab, tomat, agurk, salat og hjemmelavet dressing",
+  "price" : 109,
+  "priceText" : "109.-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Kebab-specialiteter",
+  "number" : "40D",
+  "name" : "INDBAGT KEBAB MED POMMES FRITES",
+  "description" : "kebab, pommes frites, salat og hjemmelavet dressing",
+  "price" : 115,
+  "priceText" : "115.-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Hjemmelavet pita",
+  "number" : "41",
+  "name" : "PITA-KEBAB",
+  "description" : "kebab, salat, agurk, tomat, rødløg og cremefraichedressing",
+  "price" : 70,
+  "priceText" : "70.-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Hjemmelavet pita",
+  "number" : "43",
+  "name" : "PANDRUP-KEBAB",
+  "description" : "bøf, salat, agurk, tomat og cremefraichedressing",
+  "price" : 70,
+  "priceText" : "70.-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Hjemmelavet pita",
+  "number" : "44",
+  "name" : "PITA-SKINKE",
+  "description" : "skinke, salat, agurk, tomat og cremefraichedressing",
+  "price" : 70,
+  "priceText" : "70.-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Hjemmelavet pita",
+  "number" : "45",
+  "name" : "PITA-TUN",
+  "description" : "tun, salat, agurk, tomat og thousand island dressing",
+  "price" : 70,
+  "priceText" : "70.-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Hjemmelavet pita",
+  "number" : "46",
+  "name" : "PITA-KYLLING",
+  "description" : "kylling, salat, agurk, tomat, rødløg og cremefraichedressing",
+  "price" : 70,
+  "priceText" : "70.-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Hjemmelavet pita",
+  "number" : "48",
+  "name" : "PITA-REJER",
+  "description" : "rejer, salat, agurk, tomat og thousand island dressing",
+  "price" : 70,
+  "priceText" : "70.-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Hjemmelavet pita",
+  "number" : "49",
+  "name" : "PITA-ÆG",
+  "description" : "æg, bacon, salat, agurk, tomat og cremefraichedressing",
+  "price" : 70,
+  "priceText" : "70.-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pasta",
+  "number" : "50",
+  "name" : "SPAGHETTI A’LA BOLOGNESE",
+  "description" : "med kødsauce",
+  "price" : 95,
+  "priceText" : "95,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pasta",
+  "number" : "51",
+  "name" : "LASAGNE",
+  "description" : "med pastaplader, kødsauce, ost, salat, cremefraichedressing og brød",
+  "price" : 95,
+  "priceText" : "95,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pasta",
+  "number" : "52",
+  "name" : "SPAGHETTI CARBONARA",
+  "description" : "med spaghetti, stegt bacon, gorgonzola, flødesauce (indeholder æg) og brød",
+  "price" : 109,
+  "priceText" : "109,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pasta",
+  "number" : "53",
+  "name" : "PASTA PENNE KEBAB",
+  "description" : "med pasta, kebab, cocktailpølser, fløde, tomatsauce og brød",
+  "price" : 109,
+  "priceText" : "109,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pasta",
+  "number" : "54",
+  "name" : "PASTA PENNE KYLLING (LAVET I OVN)",
+  "description" : "med pasta, kylling, rød peber, jalapeños, ost, tomatsauce og brød",
+  "price" : 109,
+  "priceText" : "109,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pasta",
+  "number" : "55",
+  "name" : "PASTA PENNE",
+  "description" : "med pasta, kylling, bacon, champignon og flødesauce",
+  "price" : 109,
+  "priceText" : "109,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Pasta",
+  "number" : null,
+  "name" : "PASTA PENNE MED SPINAT",
+  "description" : "med pasta, kylling, spinat, hvidløg, flødesauce og parmasanos",
+  "price" : 109,
+  "priceText" : "109,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Nachos",
+  "number" : "140",
+  "name" : "NACHOS",
+  "description" : "med kylling, ost, jalapeños, salsa og cremefraichedressing",
+  "price" : 87,
+  "priceText" : "87.-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Nachos",
+  "number" : "141",
+  "name" : "NACHOS",
+  "description" : "med kebab, ost, jalapeños, salsa og cremefraichedressing",
+  "price" : 87,
+  "priceText" : "87.-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Nachos",
+  "number" : "142",
+  "name" : "NACHOS",
+  "description" : "med ost, salsa og cremefraichedressing",
+  "price" : 73,
+  "priceText" : "73.-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Børnemenu",
+  "number" : "37",
+  "name" : "BØRNE PIZZA",
+  "description" : "med tomatsauce, ost og skinke",
+  "price" : 69,
+  "priceText" : "69,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Børnemenu",
+  "number" : "37A",
+  "name" : "BØRNE PIZZA",
+  "description" : "med tomatsauce, ost og pepperoni",
+  "price" : 69,
+  "priceText" : "69,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Børnemenu",
+  "number" : "37B",
+  "name" : "BØRNE PIZZA",
+  "description" : "med tomatsauce, ost og oksefars",
+  "price" : 69,
+  "priceText" : "69,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Børnemenu",
+  "number" : "38",
+  "name" : "BØRNE PIZZA",
+  "description" : "med tomatsauce, ost og kødsauce",
+  "price" : 69,
+  "priceText" : "69,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Børnemenu",
+  "number" : "38A",
+  "name" : "BØRNE SPAGHETTI",
+  "description" : "med kødsauce",
+  "price" : 69,
+  "priceText" : "69,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Børnemenu",
+  "number" : "39",
+  "name" : "BØRNE FISKEFILET",
+  "description" : "med pommes frites, ketchup og remoulade",
+  "price" : 69,
+  "priceText" : "69,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Børnemenu",
+  "number" : "39A",
+  "name" : "BØRNE KYLLINGENUGGETS 6",
+  "description" : "stk. med pommes frites, ketchup og remoulade",
+  "price" : 69,
+  "priceText" : "69,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Børnemenu",
+  "number" : "40",
+  "name" : "BØRNE PIZZA",
+  "description" : "med tomatsauce, ost og cocktailpølser",
+  "price" : 69,
+  "priceText" : "69,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Burgere",
+  "number" : "67",
+  "name" : "KYLLINGE BACON CHEESEBURGER",
+  "description" : "salat, agurk, tomat, rødløg, bacon, ost og burgerdressing",
+  "price" : 74,
+  "priceText" : "74,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Burgere",
+  "number" : "69",
+  "name" : "KYLLINGEBURGER",
+  "description" : "salat, agurk, tomat, rødløg og burgerdressing",
+  "price" : 70,
+  "priceText" : "70,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Burgere",
+  "number" : "70",
+  "name" : "DOBBELTBURGER",
+  "description" : "salat, agurk, tomat, rødløg og burgerdressing",
+  "price" : 80,
+  "priceText" : "80,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Burgere",
+  "number" : "70A",
+  "name" : "DOBBELT BACON CHEESEBURGER",
+  "description" : "salat, agurk, tomat, rødløg, bacon, ost og burgerdressing",
+  "price" : 89,
+  "priceText" : "89,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Burgere",
+  "number" : "71",
+  "name" : "BACONBURGER",
+  "description" : "salat, agurk, tomat, rødløg, bacon og burgerdressing",
+  "price" : 69,
+  "priceText" : "69,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Burgere",
+  "number" : "72",
+  "name" : "BIGBURGER",
+  "description" : "salat, agurk, tomat, rødløg og burgerdressing",
+  "price" : 65,
+  "priceText" : "65,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Burgere",
+  "number" : "73",
+  "name" : "CHEESEBURGER",
+  "description" : "salat, agurk, tomat, rødløg, ost og burgerdressing",
+  "price" : 70,
+  "priceText" : "70,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Burgere",
+  "number" : "73A",
+  "name" : "BACON CHEESEBURGER",
+  "description" : "salat, agurk, tomat, rødløg, bacon, ost og burgerdressing",
+  "price" : 77,
+  "priceText" : "77,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Burgere",
+  "number" : "120",
+  "name" : "BURGER 1",
+  "description" : "- ca. 200g. grillbøf, salat, agurk, tomat, rødløg, ketchup, burger- og cremefraichedressing",
+  "price" : 119,
+  "priceText" : "119,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Burgere",
+  "number" : "121",
+  "name" : "BURGER 2",
+  "description" : "- ca. 200g. grillbøf, ost, bacon, salat, agurk, tomat, rødløg, ketchup, burger- og cremefraichedressing",
+  "price" : 135,
+  "priceText" : "135,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Burgere",
+  "number" : "122",
+  "name" : "BURGER 3",
+  "description" : "- ca. 200g. grillbøf, ost, jalapeños, tacosauce, salat, agurk, tomat, rødløg, ketchup, burger- og cremefraichedressing",
+  "price" : 135,
+  "priceText" : "135,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Burgere",
+  "number" : "123",
+  "name" : "BURGER 4",
+  "description" : "- ca. 200g. grillbøf, ost, spejlæg, salat, agurk, tomat, rødløg, ketchup, burger- og cremefraichedressing",
+  "price" : 135,
+  "priceText" : "135,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Burgere",
+  "number" : "123A",
+  "name" : "XL AMERICAN BURGER",
+  "description" : "- med 2 bøffer à 200g, ost, bacon, salat, rødløg, salat, agurk ketchup, burger- og cremefraichedressing",
+  "price" : 179,
+  "priceText" : "179,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Burgere",
+  "number" : "74",
+  "name" : "POMMES FRITES/SAUTES",
+  "description" : "lille",
+  "price" : 45,
+  "priceText" : "45,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Burgere",
+  "number" : "75",
+  "name" : "POMMES FRITES/SAUTES",
+  "description" : "stor",
+  "price" : 55,
+  "priceText" : "55,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Burgere",
+  "number" : "76",
+  "name" : "PØLSEMIX",
+  "description" : "med pommes frites, løg og karryketchup",
+  "price" : 95,
+  "priceText" : "95,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Burgere",
+  "number" : "77",
+  "name" : "INDBAGTE REJER 10",
+  "description" : "stk. med pommes frites, ketchup, remoulade, salat og dressing",
+  "price" : 105,
+  "priceText" : "105,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Bagt kartoffel med fyld",
+  "number" : null,
+  "name" : "STOR BAGT KARTOFFEL",
+  "description" : "med fyld",
+  "price" : 89,
+  "priceText" : "89.-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Snackkurv",
+  "number" : null,
+  "name" : "SNACKKURV 3",
+  "description" : "løgringe, 3 mozzarellasticks, 3 indbagte jalapeños, 3 indbagte rejer, lidt pommes frites, BBQ-sauce og hvidløgsmayo",
+  "price" : 99,
+  "priceText" : "99.-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Salater",
+  "number" : "57",
+  "name" : "KEBABSALAT",
+  "description" : "med kebab, tomat, agurk, salat, rødløg, cremefraichedressing, brød og smør",
+  "price" : 90,
+  "priceText" : "90,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Salater",
+  "number" : "58",
+  "name" : "TZATZIKI",
+  "description" : "med brød",
+  "price" : 70,
+  "priceText" : "70,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Salater",
+  "number" : "59",
+  "name" : "KYLLINGESALAT MED BACON",
+  "description" : "med kylling, stegt bacon, tomat, agurk, salat, cremefraichedressing, brød og smør",
+  "price" : 99,
+  "priceText" : "99,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Salater",
+  "number" : "60",
+  "name" : "KYLLINGESALAT",
+  "description" : "med kylling, tomat, agurk, salat, cremefraichedressing, brød og smør",
+  "price" : 90,
+  "priceText" : "90,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Salater",
+  "number" : "61",
+  "name" : "TUNSALAT",
+  "description" : "med tun, tomat, agurk, salat, thousand island dressing, brød og smør",
+  "price" : 90,
+  "priceText" : "90,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Salater",
+  "number" : "62",
+  "name" : "REJESALAT",
+  "description" : "med rejer, asparges, agurk, tomat, salat, thousand island dressing, brød og smør",
+  "price" : 90,
+  "priceText" : "90,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Salater",
+  "number" : "63",
+  "name" : "GRÆSK BONDESALAT",
+  "description" : "med fetaost, oliven, rødløg, tomat, agurk, cremefraichedressing, brød og smør",
+  "price" : 90,
+  "priceText" : "90,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Salater",
+  "number" : "64",
+  "name" : "GRØN SALAT",
+  "description" : "med salat, tomat, agurk, rødløg, cremefraichedressing, brød og smør",
+  "price" : 70,
+  "priceText" : "70,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Salater",
+  "number" : "65",
+  "name" : "PASTASALAT",
+  "description" : "med pasta, kylling, bacon, tomat, agurk, cremefraichedressing, brød og smør",
+  "price" : 99,
+  "priceText" : "99,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Salater",
+  "number" : "66",
+  "name" : "HVIDLØGSBRØD",
+  "description" : "med ost",
+  "price" : 60,
+  "priceText" : "60,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Salater",
+  "number" : "66A",
+  "name" : "PESTROBRØD",
+  "description" : "- NYHED",
+  "price" : 60,
+  "priceText" : "60,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Grill og steak specialiteter",
+  "number" : "78",
+  "name" : "ADANA KEBAB (STÆRK)",
+  "description" : "- 2 stk. stærk krydret tyrkisk ret med oksefars på spyd, steak house pommes frites, champignonsauce, tzatziki, salat og cremefraichedressing",
+  "price" : 129,
+  "priceText" : "129,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : true
+}, {
+  "category" : "Grill og steak specialiteter",
+  "number" : "79",
+  "name" : "BØFSANDWICH",
+  "description" : "ca. 200 gram med brun sovs, ristet løg, rødbeder, agurkesalat, ketchup og remoulade",
+  "price" : 95,
+  "priceText" : "95,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Grill og steak specialiteter",
+  "number" : "79A",
+  "name" : "BØFSANDWICH MED POMMES",
+  "description" : "ca. 200 gram med brun sovs, ristet løg, rødbeder, agurkesalat, pommes frites, ketchup og remoulade",
+  "price" : 115,
+  "priceText" : "115,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Grill og steak specialiteter",
+  "number" : "80",
+  "name" : "SIS KEBAB",
+  "description" : "marinerede terninger af oksefilet på spyd, med pommes sautes, champignonsauce eller bearnaisesauce, salat og cremefraichedressing tzatziki, salat og cremefraichedressing",
+  "price" : 209,
+  "priceText" : "209,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : true
+}, {
+  "category" : "Grill og steak specialiteter",
+  "number" : "81",
+  "name" : "KURDISK BØF (STÆRK) 3",
+  "description" : "stk. krydrede oksehakkebøffer med pebersauce, steak house pommes frites, salat, cremefraichedressing og tzatziki",
+  "price" : 129,
+  "priceText" : "129,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : true
+}, {
+  "category" : "Grill og steak specialiteter",
+  "number" : "82",
+  "name" : "GRÆSK BØF 4",
+  "description" : "stk. krydrede oksehakkebøffer med champignonsauce eller bearnaisesauce, pommes sautes, salat, cremefraichedressing og tzatziki",
+  "price" : 129,
+  "priceText" : "129,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : true
+}, {
+  "category" : "Grill og steak specialiteter",
+  "number" : "84",
+  "name" : "LAMMEKOTELET 3",
+  "description" : "stk. serveres med pommes sautes, champignonsauce eller bearnaisesauce salat og cremefraichedressing",
+  "price" : 189,
+  "priceText" : "189,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : true
+}, {
+  "category" : "Grill og steak specialiteter",
+  "number" : "85",
+  "name" : "PLANKEBØF",
+  "description" : "ca. 200 gr. med pommes sautes, champignonsauce eller bearnaisesauce, salat og cremefraichedressing",
+  "price" : 119,
+  "priceText" : "119,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Grill og steak specialiteter",
+  "number" : "86",
+  "name" : "SKINKESCHNITZEL",
+  "description" : "med pommes sautes, bearnaisesauce, salat og cremefraichedressing",
+  "price" : 119,
+  "priceText" : "119,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Grill og steak specialiteter",
+  "number" : "87",
+  "name" : "DANSK BØF",
+  "description" : "ca. 200g. med pommes sautes, brun sovs, stegte løg, salat og cremefraichedressing",
+  "price" : 119,
+  "priceText" : "119,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Grill og steak specialiteter",
+  "number" : "88",
+  "name" : "GRILL KYLLING",
+  "description" : "- 1/2 kylling - ca. 450g. med pommes frites, remoulade, ketchup, salat og cremefraichedressing",
+  "price" : 109,
+  "priceText" : "109,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Grill og steak specialiteter",
+  "number" : "88A",
+  "name" : "GRILL KYLLING",
+  "description" : "- 1/2 kylling - ca. 450g",
+  "price" : 89,
+  "priceText" : "89,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Grill og steak specialiteter",
+  "number" : "89",
+  "name" : "ENGELSK BØF",
+  "description" : "af oksefilet - ca. 250g. med pommes sautes, stegte løg, hvidløgspersillesmør, bearnaisesauce, salat og cremefraichedressing",
+  "price" : 209,
+  "priceText" : "209,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : true
+}, {
+  "category" : "Grill og steak specialiteter",
+  "number" : "90",
+  "name" : "FISKEFILET 2",
+  "description" : "stk med pommes frites, ketchup, remoulade, salat og cremefraichedressing",
+  "price" : 109,
+  "priceText" : "109,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Grill og steak specialiteter",
+  "number" : "91",
+  "name" : "STJERNESKUD",
+  "description" : "med 2 stegte rødspættefiletter, rejer, caviar, champignon, asparges, æg og hjemmelavet dressing",
+  "price" : 129,
+  "priceText" : "129,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Grill og steak specialiteter",
+  "number" : "92",
+  "name" : "BLANDET GRILL",
+  "description" : "en lammekotelet, en græsk bøf, en sis kebab, døner kebab, pommes sautes, champignonsauce eller bearnaisesauce, salat og cremefraichedressing",
+  "price" : 249,
+  "priceText" : "249,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : true
+}, {
+  "category" : "Grill og steak specialiteter",
+  "number" : "93",
+  "name" : "T-BONE STEAK",
+  "description" : "- ca. 400g. med pommes sautes, champignonsauce, bearnaisesauce, salat og cremefraichedressing",
+  "price" : 289,
+  "priceText" : "289,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : true
+}, {
+  "category" : "Grill og steak specialiteter",
+  "number" : "94",
+  "name" : "PEBERSTEAK",
+  "description" : "af oksefilet - ca. 250g. med pebersauce, steak house pommes frites, salat og cremefraichedressing",
+  "price" : 209,
+  "priceText" : "209,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : true
+}, {
+  "category" : "Grill og steak specialiteter",
+  "number" : "95",
+  "name" : "STEAK AF OKSEFILET",
+  "description" : "- ca. 250g. med champignonsauce, steak house pommes frites, salat og cremefraichedressing",
+  "price" : 209,
+  "priceText" : "209,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : true
+}, {
+  "category" : "Grill og steak specialiteter",
+  "number" : "96",
+  "name" : "CRISPY CHICKEN 2",
+  "description" : "stk. paneret kyllingefilet med pommes frites, remoulade, ketchup, salat og cremefraichedressing",
+  "price" : 109,
+  "priceText" : "109,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Grill og steak specialiteter",
+  "number" : "97",
+  "name" : "KYLLINGESPYD",
+  "description" : "- 2 spyd med marineret kylling, med steak house pommes frites, stegte snackpeber og tomat champignonsauce eller bearnaisesauce, salat og cremefraiche dressing",
+  "price" : 169,
+  "priceText" : "169,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : false
+}, {
+  "category" : "Grill og steak specialiteter",
+  "number" : "100",
+  "name" : "WHISKEY STEAK AF OKSEFILET",
+  "description" : "- ca. 250g. med whiskeysauce, steak house pommes frites, salat og cremefraichedressing",
+  "price" : 209,
+  "priceText" : "209,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : true
+}, {
+  "category" : "Grill og steak specialiteter",
+  "number" : "162",
+  "name" : "GRILLET OKSEMØRBRAD",
+  "description" : "- ca. 200g. med bearnaisesauce, steak house pommes frites, salat og cremefraichedressing",
+  "price" : 249,
+  "priceText" : "249,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : true
+}, {
+  "category" : "Grill og steak specialiteter",
+  "number" : "163",
+  "name" : "GRILLET OKSEMØRBRAD",
+  "description" : "- ca. 200g. med pebersauce, steak house pommes frites, salat og cremefraichedressing",
+  "price" : 249,
+  "priceText" : "249,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : true
+}, {
+  "category" : "Grill og steak specialiteter",
+  "number" : "164",
+  "name" : "GRILLET OKSEMØRBRAD",
+  "description" : "- ca. 200g. med champignonsauce, steak house pommes frites, salat og cremefraichedressing",
+  "price" : 249,
+  "priceText" : "249,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : true
+}, {
+  "category" : "Grill og steak specialiteter",
+  "number" : "166",
+  "name" : "GRILLET OKSEMØRBRAD",
+  "description" : "- ca. 200g. med whiskeysauce, steak house pommes frites, salat og cremefraichedressing",
+  "price" : 249,
+  "priceText" : "249,-",
+  "lunchOffer" : false,
+  "charcoalGrill" : true
+} ]
