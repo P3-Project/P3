@@ -1,0 +1,10 @@
+package dk.aau.ppsh.backend.order;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
+
+public interface OrderItemRepository extends JpaRepository<OrderItem, Integer> {
+
+    // All lines on one order
+    List<OrderItem> findByOrderId(Integer orderId);
+}
