@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "MenuScraper",
+            "request": "launch",
+            "mainClass": "dk.aau.ppsh.backend.tools.MenuScraper",
+            "projectName": "backend"
+        },
+        {
             "type": "jdk",
             "request": "launch",
             "name": "Launch Java App"
