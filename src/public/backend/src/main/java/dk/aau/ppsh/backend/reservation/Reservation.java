@@ -9,6 +9,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "reservation")
@@ -19,20 +22,25 @@ public class Reservation {
     @Column(name = "reservation_id")
     private Integer reservationId;
 
+    @NotBlank(message = "Navn er påkrævet")
     @Column(name = "customer_name")
     private String customerName;
 
     @Column(name = "customer_phone")
     private String customerPhone;
 
+    @NotNull(message = "Dato er påkrævet")
     @Column(name = "res_date")
     private LocalDate resDate;
 
+    @NotNull(message = "Tidspunkt er påkrævet")
     @Column(name = "res_time")
     private LocalTime resTime;
 
     private Integer duration;
 
+    @NotNull
+    @Min(value = 1, message = "Der skal være mindst én gæst")
     @Column(name = "number_of_guests")
     private Integer numberOfGuests;
 

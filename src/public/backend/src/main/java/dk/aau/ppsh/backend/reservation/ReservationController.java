@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/reservations")
 public class ReservationController {
@@ -31,8 +33,13 @@ public class ReservationController {
         return repo.findByResDateOrderByResTime(date);
     }
         // POST /api/reservations -> create a reservation
-    @PostMapping
-    public Reservation create(@RequestBody Reservation reservation) {
+       @PostMapping
+    public Reservation create(@Valid @RequestBody Reservation reservation) {
+        reservation.setReservationId(null);   // the database assigns it
+        reservation.setStatus("booked");      // new reservations always start here
+        if (reservation.getDuration() == null) {
+            reservation.setDuration(120);
+        }
         return repo.save(reservation);
     }
 
