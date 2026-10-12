@@ -5,6 +5,5 @@ import java.util.List;
 
 public interface OrderItemRepository extends JpaRepository<OrderItem, Integer> {
 
-    // All lines on one order
-    List<OrderItem> findByOrderId(Integer orderId);
+  
 }
