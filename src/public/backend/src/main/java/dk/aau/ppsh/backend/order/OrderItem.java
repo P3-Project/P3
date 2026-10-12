@@ -1,4 +1,5 @@
 package dk.aau.ppsh.backend.order;
+
 import jakarta.persistence.*;
 import java.time.Instant;
 
@@ -6,7 +7,7 @@ import java.time.Instant;
 
 @Table(name = "order_item")
 public class OrderItem {
- @Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // SERIAL in Postgres
     private Integer orderItemId;
 
@@ -26,7 +27,8 @@ public class OrderItem {
     @Column(nullable = false)
     private boolean completed;
 
-    protected OrderItem() {} // JPA needs an empty constructor
+    protected OrderItem() {
+    } // JPA needs an empty constructor
 
     public OrderItem(Integer orderId, Integer itemId, Integer quantity, String note) {
         this.orderId = orderId;
@@ -36,13 +38,32 @@ public class OrderItem {
         this.completed = false;
     }
 
-    public Integer getOrderItemId() { return orderItemId; }
-    public Integer getOrderId() { return orderId; }
-    public Integer getItemId() { return itemId; }
-    public Integer getQuantity() { return quantity; }
-    public String getNote() { return note; }
-    public Instant getSentAt() { return sentAt; }
-    public boolean isCompleted() { return completed; }
+    public Integer getOrderItemId() {
+        return orderItemId;
+    }
 
+    public Integer getOrderId() {
+        return orderId;
+    }
+
+    public Integer getItemId() {
+        return itemId;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public Instant getSentAt() {
+        return sentAt;
+    }
+
+    public boolean isCompleted() {
+        return completed;
+    }
 
 }
