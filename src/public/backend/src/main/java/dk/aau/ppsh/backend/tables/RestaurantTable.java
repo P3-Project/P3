@@ -1,4 +1,4 @@
-package dk.aau.ppsh.backend.menu;
+package dk.aau.ppsh.backend.tables;
 
 import jakarta.persistence.*;
 

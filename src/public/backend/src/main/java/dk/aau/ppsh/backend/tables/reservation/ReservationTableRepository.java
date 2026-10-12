@@ -1,4 +1,4 @@
-package dk.aau.ppsh.backend.menu;
+package dk.aau.ppsh.backend.tables.reservation;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 

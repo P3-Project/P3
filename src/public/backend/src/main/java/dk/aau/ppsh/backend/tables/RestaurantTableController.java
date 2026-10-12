@@ -1,6 +1,7 @@
-package dk.aau.ppsh.backend.menu;
+package dk.aau.ppsh.backend.tables;
 
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 

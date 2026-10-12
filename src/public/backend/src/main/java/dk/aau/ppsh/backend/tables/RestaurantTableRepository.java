@@ -1,6 +1,7 @@
-package dk.aau.ppsh.backend.menu;
+package dk.aau.ppsh.backend.tables;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+
 import java.util.List;
 
 // Spring generates findAll(), findById(), save(), etc. for us

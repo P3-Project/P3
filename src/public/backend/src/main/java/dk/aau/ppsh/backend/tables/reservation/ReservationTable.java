@@ -1,4 +1,4 @@
-package dk.aau.ppsh.backend.menu;
+package dk.aau.ppsh.backend.tables.reservation;
 
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
