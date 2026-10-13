@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 
 // Same shape as the JSON from the backend
 export type Dish = {
-    id: number;
+    itemId: number;
     name: string;
     ingredients: string;
     price: number;
