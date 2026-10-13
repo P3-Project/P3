@@ -1,10 +1,10 @@
-package dk.aau.ppsh.backend.Order;
+package dk.aau.ppsh.backend.order;
 
 import dk.aau.ppsh.backend.menu.MenuItem;
 import dk.aau.ppsh.backend.menu.MenuItemRepository;
 import dk.aau.ppsh.backend.tables.RestaurantTable;
 import dk.aau.ppsh.backend.tables.RestaurantTableRepository;
-import dk.aau.ppsh.backend.Order.OrderDtos.*;
+import dk.aau.ppsh.backend.order.OrderDtos.*;
 import dk.aau.ppsh.backend.staff.Staff;
 import dk.aau.ppsh.backend.staff.StaffRepository;
 import org.springframework.http.HttpStatus;

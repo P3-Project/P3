@@ -1,4 +1,4 @@
-package dk.aau.ppsh.backend.Order;
+package dk.aau.ppsh.backend.order;
 
 import dk.aau.ppsh.backend.tables.RestaurantTable;
 import dk.aau.ppsh.backend.staff.Staff;

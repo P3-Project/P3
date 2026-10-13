@@ -1,4 +1,4 @@
-package dk.aau.ppsh.backend.Order;
+package dk.aau.ppsh.backend.order;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;

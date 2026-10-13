@@ -1,8 +1,8 @@
 package dk.aau.ppsh.backend;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import dk.aau.ppsh.backend.Order.OrderService;
-import dk.aau.ppsh.backend.Order.OrderDtos.KitchenItemDto;
+import dk.aau.ppsh.backend.order.OrderService;
+import dk.aau.ppsh.backend.order.OrderDtos.KitchenItemDto;
 import java.util.List;
 
 // What the kitchen screen uses

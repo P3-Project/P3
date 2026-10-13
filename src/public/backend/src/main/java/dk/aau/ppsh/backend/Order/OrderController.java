@@ -1,6 +1,6 @@
-package dk.aau.ppsh.backend.Order;
+package dk.aau.ppsh.backend.order;
 
-import dk.aau.ppsh.backend.Order.OrderDtos.*;
+import dk.aau.ppsh.backend.order.OrderDtos.*;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

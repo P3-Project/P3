@@ -1,4 +1,4 @@
-package dk.aau.ppsh.backend.Order;
+package dk.aau.ppsh.backend.order;
 import dk.aau.ppsh.backend.menu.MenuItem;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;

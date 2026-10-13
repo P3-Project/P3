@@ -1,4 +1,4 @@
-package dk.aau.ppsh.backend.Order;
+package dk.aau.ppsh.backend.order;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
