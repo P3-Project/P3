@@ -1,24 +1,53 @@
 import { useTables } from "@/features/tables/useTables";
+import { BrowserRouter, Routes, Route } from "react-router";
+import WaiterPage from "@/pages/waiter/WaiterPage";
 
-export default function App(){
-  const { data: tables, isLoading, error} = useTables();
+function TablesTest() {
+  const { data: tables, isLoading, error } = useTables();
 
   // Three states every data page needs: loading, error, data
-  if(isLoading) return <p>Indlæser borde...</p>
-  if(error) return <p>Fejl: {error.message}</p>
+  if (isLoading) return <p>Indlæser borde...</p>;
+  if (error) return <p>Fejl: {error.message}</p>;
 
   return (
-    <main style={{padding: 24}}>
+    <main style={{ padding: 24 }}>
       <h1>Bordoversigt</h1>
       {/*Simple grid: one box per table*/}
-      <div className="" style={{display: "grid", gridTemplateColumns: "repeat(auto-fill, 120px)", gap: 12}}>
+      <div
+        className=""
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, 120px)",
+          gap: 12,
+        }}
+      >
         {tables?.map((table) => (
-          <div key={table.tableNumber} style={{border: "1px solid #ccc", borderRadius: 8, padding: 12, textAlign: "center"}}> {/* table_number is unique, so it's a good key*/}
+          <div
+            key={table.tableNumber}
+            style={{
+              border: "1px solid #ccc",
+              borderRadius: 8,
+              padding: 12,
+              textAlign: "center",
+            }}
+          >
+            {" "}
+            {/* table_number is unique, so it's a good key*/}
             <strong>Bord {table.tableNumber}</strong>
             <p>{table.seats} pladser</p>
           </div>
         ))}
       </div>
     </main>
+  );
+}
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<TablesTest />} />
+        <Route path="/waiter" element={<WaiterPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
