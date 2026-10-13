@@ -1,6 +1,6 @@
-package dk.aau.ppsh.backend.menu;
+package dk.aau.ppsh.backend.customer;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
 // Spring generates findAll(), findById(), save(), etc. for us
-public interface DishRepository extends JpaRepository<Dish, Integer> {}
+public interface CustomerRepository extends JpaRepository<Customer, Integer> {}

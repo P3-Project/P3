@@ -4,7 +4,7 @@ import dk.aau.ppsh.backend.menu.MenuItem;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
-// Maps to the 'order_item' table created in V6
+// Maps to the 'order_item' table
 @Entity
 @Table(name = "order_item")
 public class OrderItem {

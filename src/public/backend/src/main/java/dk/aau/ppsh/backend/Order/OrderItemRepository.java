@@ -6,6 +6,9 @@ import java.util.List;
 
 public interface OrderItemRepository extends JpaRepository<OrderItem, Integer> {
 
+    // All lines on one order
+    List<OrderItem> findByRestaurantOrderOrderId(Integer orderId);
+
     // The kitchen screen: items the waiter has sent that are not done yet, oldest first.
     // Items on closed or cancelled orders are left out.
     @Query("""
