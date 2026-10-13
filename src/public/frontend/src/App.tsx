@@ -1,12 +1,15 @@
-import { useTables } from "@/features/tables/useTables";
+import { useTables } from "@/features/tables/useTables"; 
+import PizzaScreen from "./pages/kitchen/PizzaScreen";
+
 
 export default function App(){
   const { data: tables, isLoading, error} = useTables();
 
+
   // Three states every data page needs: loading, error, data
   if(isLoading) return <p>Indlæser borde...</p>
   if(error) return <p>Fejl: {error.message}</p>
-
+  
   return (
     <main style={{padding: 24}}>
       <h1>Bordoversigt</h1>
@@ -19,6 +22,12 @@ export default function App(){
           </div>
         ))}
       </div>
+
+     // Køkkenskærm 
+      <hr style={{ margin: "32px 0" }} />
+
+      <PizzaScreen />
     </main>
   );
 }
+
