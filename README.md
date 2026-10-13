@@ -1,4 +1,4 @@
-# P3 - Restaurant Management System – Pandrup Pizza & Steak House
+# P3 - Restaurant Management System - Pandrup Pizza & Steak House
 
 This project is a restaurant management system built for Pandrup Pizza & Steak House (PPSH). It helps the staff register table reservations, take orders at the table and send them straight to the kitchen.
 
