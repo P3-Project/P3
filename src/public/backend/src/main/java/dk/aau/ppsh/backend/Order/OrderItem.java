@@ -1,48 +1,53 @@
-package dk.aau.ppsh.backend.order;
+package dk.aau.ppsh.backend.Order;
+import dk.aau.ppsh.backend.menu.MenuItem;
 import jakarta.persistence.*;
-import java.time.Instant;
+import java.time.LocalDateTime;
 
 @Entity
-
 @Table(name = "order_item")
 public class OrderItem {
- @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // SERIAL in Postgres
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "order_item_id")
     private Integer orderItemId;
 
-    @Column(nullable = false)
-    private Integer orderId;
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "order_id")
+    private RestaurantOrder restaurantOrder;
 
-    @Column(nullable = false)
-    private Integer itemId;
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "item_id")
+    private MenuItem menuItem;
 
-    @Column(nullable = false)
     private Integer quantity;
-
     private String note;
 
-    private Instant sentAt; // null until sent to the kitchen
+    @Column(name = "sent_at")
+    private LocalDateTime sentAt;
 
-    @Column(nullable = false)
     private boolean completed;
 
-    protected OrderItem() {} // JPA needs an empty constructor
+    protected OrderItem() {}
 
-    public OrderItem(Integer orderId, Integer itemId, Integer quantity, String note) {
-        this.orderId = orderId;
-        this.itemId = itemId;
+    public OrderItem(RestaurantOrder restaurantOrder, MenuItem menuItem, Integer quantity, String note) {
+        this.restaurantOrder = restaurantOrder;
+        this.menuItem = menuItem;
         this.quantity = quantity;
         this.note = note;
-        this.completed = false;
     }
 
+    public boolean isSent() { return sentAt != null; }
+
     public Integer getOrderItemId() { return orderItemId; }
-    public Integer getOrderId() { return orderId; }
-    public Integer getItemId() { return itemId; }
+    public RestaurantOrder getRestaurantOrder() { return restaurantOrder; }
+    public MenuItem getMenuItem() { return menuItem; }
     public Integer getQuantity() { return quantity; }
     public String getNote() { return note; }
-    public Instant getSentAt() { return sentAt; }
+    public LocalDateTime getSentAt() { return sentAt; }
     public boolean isCompleted() { return completed; }
 
-
+    public void setQuantity(Integer quantity) { this.quantity = quantity; }
+    public void setNote(String note) { this.note = note; }
+    public void markSent() { this.sentAt = LocalDateTime.now(); }
+    public void markCompleted() { this.completed = true; }
 }
