@@ -1,7 +1,8 @@
 package dk.aau.ppsh.backend.order;
 import dk.aau.ppsh.backend.menu.MenuItem;
 import jakarta.persistence.*;
-import java.time.LocalDateTime;
+import java.time.Instant;
+
 
 @Entity
 @Table(name = "order_item")
@@ -23,7 +24,7 @@ public class OrderItem {
     private String note;
 
     @Column(name = "sent_at")
-    private LocalDateTime sentAt;
+    private Instant sentAt;
 
     private boolean completed;
 
@@ -43,10 +44,10 @@ public class OrderItem {
     public MenuItem getMenuItem() { return menuItem; }
     public Integer getQuantity() { return quantity; }
     public String getNote() { return note; }
-    public LocalDateTime getSentAt() { return sentAt; }
+    public Instant getSentAt() { return sentAt; }
     public boolean isCompleted() { return completed; }
     public void setQuantity(Integer quantity) { this.quantity = quantity; }
     public void setNote(String note) { this.note = note; }
-    public void markSent() { this.sentAt = LocalDateTime.now(); }
+    public void markSent() { this.sentAt = Instant.now(); }
     public void markCompleted() { this.completed = true; }
 }

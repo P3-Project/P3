@@ -1,8 +1,8 @@
-import { usePizzaKitchen } from "../../features/pizza_kitchen/usePizzaKitchen";
+import { useKitchen } from "../../features/kitchen/useKitchen";
 
 export default function PizzaScreen() {
     // hent ordrer og DONE-funktionen
-    const { data: orders, markDone, isLoading, error } = usePizzaKitchen();
+    const { data: orders, markDone, isLoading, error } = useKitchen("PIZZA");
 
     if(isLoading) return <p>Indlæser ordrer...</p>
     if(error) return <p>Fejl: {error.message}</p>
@@ -15,11 +15,11 @@ export default function PizzaScreen() {
 
                 {/* et kort for hver ordre */}
                 {orders?.map((order) => (
-                    <div key={order.id}>
+                    <div key={order.orderId}>
                         <h2>Bord {order.tableNumber}</h2>
 
                         {order.items.map((item) => (
-                            <div key={item.id}>
+                            <div key={item.orderItemId}>
                                 <p>
                                     {item.quantity}x {item.name}
                                 </p>
@@ -28,12 +28,10 @@ export default function PizzaScreen() {
                             </div>
                         ))}
 
-                        <button onClick={() => markDone.mutate(order.id)} disabled={markDone.isPending}>DONE</button>
+                        <button onClick={() => markDone.mutate(order.items.map((i) => i.orderItemId))} disabled={markDone.isPending}>DONE</button>
                     </div>
                 ))}
             </div>
-            <h1 className="mb-6 text-3xl font-semibold">Køkken · Ordrer</h1>
-            <p className="text-muted-foreground">Venter på ordre-endpoint i backenden.</p>
         </main>
     );
 }

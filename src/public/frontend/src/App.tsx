@@ -1,6 +1,5 @@
 import { useTables } from "@/features/tables/useTables"; 
 import PizzaScreen from "./pages/kitchen/PizzaScreen";
-import { useTables } from "@/features/tables/useTables";
 import { GrillKitchenView } from '@/features/GrillKitchen/GrillKitchenView';
 
 
@@ -29,11 +28,7 @@ export default function App(){
       <hr style={{ margin: "32px 0" }} />
 
       <PizzaScreen />
-    </main>
-  );
-}
-
-            <GrillKitchenView />
-    </main>
+      <GrillKitchenView />
+      </main>
     );
-}
+  }

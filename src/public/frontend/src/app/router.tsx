@@ -9,7 +9,7 @@ import Menupage from "@/pages/customer/Menupage";
 //import NewOrder from "@/pages/waiter/MewOrder";
 //import Order from "@/pages/waiter/Order";
 import PizzaScreen from "@/pages/kitchen/PizzaScreen";
-//import GrillScreen from "@/pages/kitchen/GrillScreen";
+import GrillScreen from "@/pages/kitchen/MainScreen";
 //import Reservation from "@/pages/admin/reservations";
 //import MenuEdit from "@/pages/admin/MenuEdit";
 import NotFound from "@/pages/NotFound";
@@ -39,6 +39,11 @@ export const router = createBrowserRouter([
         // Kitchen: full-screen, no nav on purpose
         path: "/pizza-kitchen",
         element: <PizzaScreen />
+    },
+    {
+        // Kitchen: full-screen, no nav on purpose
+        path: "/main-kitchen",
+        element: <GrillScreen />
     },
     {
         // Owner/admin

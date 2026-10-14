@@ -5,12 +5,17 @@ import java.util.List;
 
 public interface OrderItemRepository extends JpaRepository<OrderItem, Integer> {
 
-  // All lines on one order
-    List<OrderItem> findByOrderId(Integer orderId);
-
-    // Items that have been sent to the kitchen but aren't done, oldest first
-    List<OrderItem> findBySentAtIsNotNullAndCompletedFalseOrderBySentAtAsc();
-
-    // All Unfinished items belonging to one order
-    List<OrderItem> findByOrderIdAndCompletedFalse(Integer orderId);
+    // Everything the kitchen should be making right now, oldest first.
+    @Query("""
+    SELECT oi FROM OrderItem oi
+    JOIN FETCH oi.restaurantOrder o
+    JOIN FETCH o.restaurantTable
+    JOIN FETCH oi.menuItem
+    WHERE oi.sentAt IS NOT NULL
+      AND oi.completed = false
+      AND o.closedAt IS NULL
+      AND o.cancelledAt IS NULL
+    ORDER BY oi.sentAt ASC
+    """)
+    List<OrderItem> findPendingForKitchen();
 }
