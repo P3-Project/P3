@@ -53,16 +53,20 @@ public class OrderService {
     }
 
     @Transactional(readOnly = true)
-    public List<KitchenItemDto> kitchenQueue() {
-        return orderItems.findPendingForKitchen().stream().map(oi -> new KitchenItemDto(
-            oi.getOrderItemId(),
-            oi.getRestaurantOrder().getOrderId(),
-            oi.getRestaurantOrder().getRestaurantTable().getTableNumber(),
-            oi.getMenuItem().getName(),
-            oi.getMenuItem().getStation(),
-            oi.getQuantity(),
-            oi.getNote(),
-            oi.getSentAt())).toList();
+    public List<KitchenItemDto> kitchenQueue(String station) {
+        return orderItems.findPendingForKitchen().stream()
+            // no station = everything; otherwise only dishes made at that station
+            .filter(oi -> station == null || station.equalsIgnoreCase(oi.getMenuItem().getStation()))
+            .map(oi -> new KitchenItemDto(
+                oi.getOrderItemId(),
+                oi.getRestaurantOrder().getOrderId(),
+                oi.getRestaurantOrder().getRestaurantTable().getTableNumber(),
+                oi.getMenuItem().getName(),
+                oi.getMenuItem().getStation(),
+                oi.getQuantity(),
+                oi.getNote(),
+                oi.getSentAt()))
+            .toList();
     }
 
     // ---------- Waiter actions ----------

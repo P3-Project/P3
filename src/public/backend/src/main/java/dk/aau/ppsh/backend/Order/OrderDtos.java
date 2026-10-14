@@ -3,7 +3,7 @@ package dk.aau.ppsh.backend.order;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import java.time.LocalDateTime;
+import java.time.Instant;
 import java.util.List;
 
 // Request and response shapes of the API. Entities are never sent directly (lazy relations, internals).
@@ -30,7 +30,7 @@ public final class OrderDtos {
         Integer price,
         Integer quantity,
         String note,
-        LocalDateTime sentAt,
+        Instant sentAt,
         boolean completed) {}
 
     public record OrderDto(
@@ -39,9 +39,9 @@ public final class OrderDtos {
         Integer waiterId,
         String waiterName,
         String status,           // OPEN, CLOSED or CANCELLED
-        LocalDateTime createdAt,
-        LocalDateTime closedAt,
-        LocalDateTime cancelledAt,
+        Instant createdAt,
+        Instant closedAt,
+        Instant cancelledAt,
         Integer total,           // sum of price * quantity over all items
         List<OrderItemDto> items) {}
 
@@ -53,5 +53,5 @@ public final class OrderDtos {
         String station,
         Integer quantity,
         String note,
-        LocalDateTime sentAt) {}
+        Instant sentAt) {}
 }
