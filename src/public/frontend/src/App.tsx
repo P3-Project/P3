@@ -1,6 +1,8 @@
 import { useTables } from "@/features/tables/useTables";
 import { BrowserRouter, Routes, Route } from "react-router";
 import WaiterPage from "@/pages/waiter/WaiterPage";
+import { GrillKitchenView } from '@/features/GrillKitchen/GrillKitchenView';
+
 
 function TablesTest() {
   const { data: tables, isLoading, error } = useTables();
@@ -38,6 +40,7 @@ function TablesTest() {
           </div>
         ))}
       </div>
+            <GrillKitchenView />
     </main>
   );
 }
@@ -50,4 +53,6 @@ export default function App() {
       </Routes>
     </BrowserRouter>
   );
+}
+    );
 }
