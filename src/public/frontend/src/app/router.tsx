@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter, Navigate } from "react-router";
 
 import { CustomerLayout } from "@/components/layout/CustomerLayout";
 import { StaffLayout } from "@/components/layout/StaffLayout";
@@ -9,9 +9,11 @@ import Menupage from "@/pages/customer/Menupage";
 //import NewOrder from "@/pages/waiter/MewOrder";
 //import Order from "@/pages/waiter/Order";
 import PizzaScreen from "@/pages/kitchen/PizzaScreen";
-import GrillScreen from "@/pages/kitchen/MainScreen";
+import GrillScreen from "@/pages/kitchen/GrillScreen";
+import OverviewScreen from "@/pages/kitchen/OverviewScreen";
 //import Reservation from "@/pages/admin/reservations";
 //import MenuEdit from "@/pages/admin/MenuEdit";
+import LogInPage from "@/pages/admin/LogIn";
 import NotFound from "@/pages/NotFound";
 
 export const router = createBrowserRouter([
@@ -22,6 +24,7 @@ export const router = createBrowserRouter([
         children: [
             { index: true, element: <Frontpage /> }, // "/"
             { path: "menu", element: <Menupage /> }, // "/menu"
+            { path: "login", element: <LogInPage /> }, // "/login"
         ]
     },
     {
@@ -36,14 +39,14 @@ export const router = createBrowserRouter([
         ],
     },
     {
-        // Kitchen: full-screen, no nav on purpose
-        path: "/pizza-kitchen",
-        element: <PizzaScreen />
-    },
-    {
-        // Kitchen: full-screen, no nav on purpose
-        path: "/main-kitchen",
-        element: <GrillScreen />
+        path: "/kitchen",
+        element: <StaffLayout title="Køkken" />,
+        children: [
+            {index: true, element: <Navigate to="overview" replace />},
+            {path: "overview", element: <OverviewScreen />},
+            {path: "pizza", element: <PizzaScreen />},
+            {path: "grill", element: <GrillScreen />}
+        ]
     },
     {
         // Owner/admin

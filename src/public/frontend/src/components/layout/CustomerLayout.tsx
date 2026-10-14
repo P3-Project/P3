@@ -13,6 +13,7 @@ export function CustomerLayout() {
               Forside
             </NavItem>
             <NavItem to="/menu">Menukort</NavItem>
+            <NavItem to="/login">Login</NavItem>
           </div>
         </nav>
       </header>

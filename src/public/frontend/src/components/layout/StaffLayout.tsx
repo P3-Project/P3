@@ -9,6 +9,11 @@ const links = {
         { to: "/admin", label: "Reservationer", end: true },
         { to: "/admin/menu", label: "Menukort" },
     ],
+    Køkken: [
+    { to: "/kitchen/overview", label: "Oversigt", end: true},
+    { to: "/kitchen/pizza", label: "Pizza" },
+    { to: "/kitchen/grill", label: "Grill" },
+],
 };
 
 export function StaffLayout({ title }: { title: keyof typeof links }) {
