@@ -1,5 +1,7 @@
 import { useTables } from "@/features/tables/useTables"; 
 import PizzaScreen from "./pages/kitchen/PizzaScreen";
+import { useTables } from "@/features/tables/useTables";
+import { GrillKitchenView } from '@/features/GrillKitchen/GrillKitchenView';
 
 
 export default function App(){
@@ -31,3 +33,7 @@ export default function App(){
   );
 }
 
+            <GrillKitchenView />
+    </main>
+    );
+}
