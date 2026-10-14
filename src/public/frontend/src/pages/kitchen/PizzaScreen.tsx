@@ -2,16 +2,19 @@ import { usePizzaKitchen } from "../../features/pizza_kitchen/usePizzaKitchen";
 
 export default function PizzaScreen() {
     // hent ordrer og DONE-funktionen
-    const { orders, markDone } = usePizzaKitchen();
+    const { data: orders, markDone, isLoading, error } = usePizzaKitchen();
+
+    if(isLoading) return <p>Indlæser ordrer...</p>
+    if(error) return <p>Fejl: {error.message}</p>
 
     return (
         <main className="min-h-svh p-8">
             <div>
                 <h1>PIZZA KITCHEN</h1>
-                <p>{orders.length} åbne ordrer</p>
+                <p>{orders?.length} åbne ordrer</p>
 
                 {/* et kort for hver ordre */}
-                {orders.map((order) => (
+                {orders?.map((order) => (
                     <div key={order.id}>
                         <h2>Bord {order.tableNumber}</h2>
 
@@ -25,7 +28,7 @@ export default function PizzaScreen() {
                             </div>
                         ))}
 
-                        <button onClick={() => markDone(order.id)}>DONE</button>
+                        <button onClick={() => markDone.mutate(order.id)} disabled={markDone.isPending}>DONE</button>
                     </div>
                 ))}
             </div>

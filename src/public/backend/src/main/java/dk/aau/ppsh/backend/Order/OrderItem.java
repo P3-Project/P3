@@ -43,6 +43,5 @@ public class OrderItem {
     public String getNote() { return note; }
     public Instant getSentAt() { return sentAt; }
     public boolean isCompleted() { return completed; }
-
-
+    public void markCompleted() { this.completed = true; }
 }
