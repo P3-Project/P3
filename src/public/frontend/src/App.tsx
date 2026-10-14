@@ -1,4 +1,6 @@
 import { useTables } from "@/features/tables/useTables";
+import { GrillKitchenView } from '@/features/GrillKitchen/GrillKitchenView';
+
 
 export default function App(){
   const { data: tables, isLoading, error} = useTables();
@@ -19,6 +21,7 @@ export default function App(){
           </div>
         ))}
       </div>
+            <GrillKitchenView />
     </main>
-  );
+    );
 }
