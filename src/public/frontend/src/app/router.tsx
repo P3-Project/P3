@@ -15,6 +15,7 @@ import OverviewScreen from "@/pages/kitchen/OverviewScreen";
 //import MenuEdit from "@/pages/admin/MenuEdit";
 import LogInPage from "@/pages/admin/LogIn";
 import NotFound from "@/pages/NotFound";
+import WaiterPage from "@/pages/waiter/WaiterPage";
 
 export const router = createBrowserRouter([
     {
@@ -32,6 +33,7 @@ export const router = createBrowserRouter([
         path: "/waiter",
         element: <StaffLayout title="Tjener" />,
         children: [
+            {index: true, element: <WaiterPage /> }, // "/waiter"
             //{ index: true, element: <NewOrder /> }, // "/waiter"
             //{ path: "tables/:tableNumber/new-order", element: <NewOrder /> },
             //{ path: "orders/:orderId", element: <Order /> },
