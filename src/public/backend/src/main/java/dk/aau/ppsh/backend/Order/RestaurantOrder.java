@@ -3,13 +3,13 @@ package dk.aau.ppsh.backend.order;
 import dk.aau.ppsh.backend.tables.RestaurantTable;
 import dk.aau.ppsh.backend.staff.Staff;
 import jakarta.persistence.*;
-import java.time.LocalDateTime;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
-// Maps to the 'restaurant_order' table created in V5
+// Maps to the 'customer_order' table created in V2
 @Entity
-@Table(name = "restaurant_order")
+@Table(name = "customer_order")
 public class RestaurantOrder {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,17 +21,17 @@ public class RestaurantOrder {
     private RestaurantTable restaurantTable;
 
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    @JoinColumn(name = "waiter_id")
+    @JoinColumn(name = "staff_id")
     private Staff waiter;
 
     @Column(name = "created_at")
-    private LocalDateTime createdAt = LocalDateTime.now();
+    private Instant createdAt = Instant.now();
 
     @Column(name = "closed_at")
-    private LocalDateTime closedAt;
+    private Instant closedAt;
 
     @Column(name = "cancelled_at")
-    private LocalDateTime cancelledAt;
+    private Instant cancelledAt;
 
     // One order contains many order items. The foreign key lives in order_item, hence mappedBy.
     @OneToMany(mappedBy = "restaurantOrder", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -56,11 +56,11 @@ public class RestaurantOrder {
     public Integer getOrderId() { return orderId; }
     public RestaurantTable getRestaurantTable() { return restaurantTable; }
     public Staff getWaiter() { return waiter; }
-    public LocalDateTime getCreatedAt() { return createdAt; }
-    public LocalDateTime getClosedAt() { return closedAt; }
-    public LocalDateTime getCancelledAt() { return cancelledAt; }
+    public Instant getCreatedAt() { return createdAt; }
+    public Instant getClosedAt() { return closedAt; }
+    public Instant getCancelledAt() { return cancelledAt; }
     public List<OrderItem> getItems() { return items; }
 
-    public void close() { this.closedAt = LocalDateTime.now(); }
-    public void cancel() { this.cancelledAt = LocalDateTime.now(); }
+    public void close() { this.closedAt = Instant.now(); }
+    public void cancel() { this.cancelledAt = Instant.now(); }
 }
