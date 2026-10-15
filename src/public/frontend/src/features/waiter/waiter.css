@@ -1,0 +1,83 @@
+/* Når tjener-siden vises: fjern skabelonens smalle, centrerede layout */
+#root:has(.waiter-app) {
+  width: 100%;
+  max-width: none;
+  text-align: left;
+  border: 0;
+}
+
+/* Farver fra mockuppen. "--" er en CSS-variabel, så vi kan genbruge farven */
+.waiter-app {
+  --navy: #0b2545;
+  --cream: #f4f2ef;
+  font-family: "Geist Variable", system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+/* Nulstil skabelonens kæmpe overskrifter */
+.waiter-app h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: 0;
+}
+
+/* Beige bjælke øverst med bordnummer */
+.waiter-header {
+  background: var(--cream);
+  border-bottom: 1px solid #c9c6c1;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Navy knapper i stedet for Bootstraps sorte */
+.btn-navy {
+  background: var(--navy);
+  color: #fff;
+  border: 1px solid var(--navy);
+}
+.btn-navy-outline {
+  background: #efedea;
+  color: #222;
+  border: 1px solid #c9c6c1;
+}
+.btn-navy:hover {
+  background: #13315c;
+  color: #fff;
+}
+
+/* Firkantede kort og knapper som i mockuppen */
+.waiter-app .card,
+.waiter-app .btn {
+  border-radius: 0;
+}
+
+/* Bordkort og menukort */
+.waiter-app .card {
+  border: 1px solid #8f8c87;
+  background: #fff;
+}
+.waiter-app .card:hover:not(:disabled) {
+  background: var(--cream);
+}
+.table-number {
+  color: var(--navy);
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+/* Kategori-fanerne: fylder hele bredden og er store at trykke på */
+.category-tabs {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+.category-tabs .btn {
+  flex: 1;
+  padding: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
