@@ -1,3 +1,5 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import "@/features/kitchen/kitchen.css";
 import { useKitchen } from "@/features/kitchen/useKitchen";
 
 type Props = {

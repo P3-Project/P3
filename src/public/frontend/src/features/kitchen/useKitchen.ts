@@ -48,7 +48,7 @@ export function useKitchen(station: "PIZZA" | "GRILL"){
         }));
         },
         onSuccess: () => {
-            queryClient.invalidateQueries({ queryKey: ["orders"] });
+            queryClient.invalidateQueries({ queryKey: ["kitchen"] });
         },
     });
     
