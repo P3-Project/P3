@@ -27,7 +27,7 @@ export function StaffLayout({ title }: { title: keyof typeof links }) {
                             key={link.to}
                             to={link.to}
                             end={link.end}
-                            className={({ isActive })=> `rounded-md px-3 py-2 text-sm ${isActive ? "bg-background font-medium shadow-sm" : "hover:bg-background/60"}`
+                            className={({ isActive })=> `rounded-md px-3 py-2 text-sm text-foreground! no-underline! ${isActive ? "bg-background font-medium shadow-sm" : "hover:bg-background/60"}`
                         }>
                             {link.label}
                         </NavLink>
