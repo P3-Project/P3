@@ -7,12 +7,12 @@
 
 :root {
   --text: #6b6375;
-  --text-h: #08060d;
+  --text-h: #000;
   --bg: #fff;
   --border: oklch(0.922 0 0);
   --code-bg: #f4f3ec;
   --accent: oklch(0.97 0 0);
-  --accent-bg: rgba(170, 59, 255, 0.1);
+  --accent-bg: rgba(38, 38, 39, 0.1);
   --accent-border: rgba(170, 59, 255, 0.5);
   --social-bg: rgba(244, 243, 236, 0.5);
   --shadow:
@@ -118,11 +118,10 @@
 }
 
 #root {
-  width: 1126px;
+  width: 2500px;
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
-  border-inline: 1px solid var(--border);
   min-height: 100svh;
   display: flex;
   flex-direction: column;
@@ -137,7 +136,7 @@ h1,
 h2 {
   font-family: var(--heading);
   font-weight: 500;
-  color: var(--text-h);
+  /*color: var(--text-h); skal kigges på */
 }
 
 h1 {
