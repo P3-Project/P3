@@ -9,7 +9,7 @@ export default function Frontpage() {
 
             <div className="flex gap-3">
                 <Link to="/menu" className={`${buttonVariants()} bg-[#586828]! text-white! no-underline! hover:bg-[#4a5a22]!`}>Se Menukort</Link>
-                <a href="tel:00000000" className={`${buttonVariants({ variant: "outline"})} border-[#586828]! text-[#586828]! no-underline!`}>Ring og bestil bord</a>
+                <a href="tel:+4598246566" className={`${buttonVariants({ variant: "outline"})} border-[#586828]! text-[#586828]! no-underline!`}>Ring og bestil bord</a>
             </div>
         </section>
     );
