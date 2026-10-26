@@ -81,3 +81,10 @@
   text-transform: uppercase;
   font-weight: 700;
 }
+
+.btn-navy:disabled {
+background: #8d97a8;
+border-color: #8d97a8;
+color: #fff;
+opacity: 1;
+}
