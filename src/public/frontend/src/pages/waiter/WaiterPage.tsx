@@ -18,8 +18,6 @@ export default function WaiterPage() {
   // ordrer per bord, bordnummer er key
   const [orders, setOrders] = useState<Record<number, OrderLine[]>>({});
 
-  // ---------- Order logic (unchanged) ----------
-
   function addItem(item: MenuItem) {
     if (selectedTable === null) return;
 
