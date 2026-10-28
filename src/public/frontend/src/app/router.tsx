@@ -33,7 +33,7 @@ export const router = createBrowserRouter([
         path: "/waiter",
         element: <StaffLayout title="Tjener" />,
         children: [
-            {index: true, element: <WaiterPage /> }, // "/waiter"
+            { index: true, element: <WaiterPage />, handle: { fullBleed: true } }, // "/waiter"
             //{ index: true, element: <NewOrder /> }, // "/waiter"
             //{ path: "tables/:tableNumber/new-order", element: <NewOrder /> },
             //{ path: "orders/:orderId", element: <Order /> },
@@ -43,6 +43,16 @@ export const router = createBrowserRouter([
     {
         path: "/kitchen",
         element: <StaffLayout title="Køkken" />,
+        children: [
+            {index: true, element: <Navigate to="overview" replace />},
+            {path: "overview", element: <OverviewScreen />},
+            {path: "pizza", element: <PizzaScreen />},
+            {path: "grill", element: <GrillScreen />}
+        ]
+    },
+    {
+        path: "/reservation",
+        element: <StaffLayout title="Reservation" />,
         children: [
             {index: true, element: <Navigate to="overview" replace />},
             {path: "overview", element: <OverviewScreen />},

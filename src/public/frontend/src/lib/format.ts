@@ -4,6 +4,20 @@ export function formatPrice(kroner: number){
     return `${kroner.toLocaleString("da-DK")} kr.`;
 }
 
+// Abbreviations that should stay in capitals
+const KEEP_UPPERCASE = new Set(["XL", "BBQ"]);
+
+// "PIZZA BOLOGNESE" -> "Pizza Bolognese", "T-BONE STEAK" -> "T-Bone Steak",
+// "CALZONE (INDBAGT)" -> "Calzone (Indbagt)". The menu data is ALL CAPS, which reads as shouting.
+export function toTitleCase(text: string) {
+  return text
+    .toLowerCase()
+    // \p{L} = any letter, incl. æ/ø/å. Capitalise a letter at the start, or after a space, -, ( or /
+    .replace(/(^|[\s\-(/])(\p{L})/gu, (_, before: string, letter: string) => before + letter.toUpperCase())
+    // Put abbreviations back: "Xl" -> "XL"
+    .replace(/\p{L}+/gu, (word) => (KEEP_UPPERCASE.has(word.toUpperCase()) ? word.toUpperCase() : word));
+}
+
 // 18:00:00 (Java LocalTime) -> "18:00"
 export function formatTime(time: string){
     return time.slice(0, 5);
