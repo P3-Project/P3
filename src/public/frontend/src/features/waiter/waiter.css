@@ -8,7 +8,7 @@
 
 /* Farver fra mockuppen. "--" er en CSS-variabel, så vi kan genbruge farven */
 .waiter-app {
-  --navy: #0b2545;
+  --navy: #586828;
   --cream: #f4f2ef;
   font-family: "Geist Variable", system-ui, sans-serif;
   min-height: 100vh;
@@ -45,7 +45,7 @@
   border: 1px solid #c9c6c1;
 }
 .btn-navy:hover {
-  background: #13315c;
+  background: #4a5a22;
   color: #fff;
 }
 
@@ -64,7 +64,7 @@
   background: var(--cream);
 }
 .table-number {
-  color: var(--navy);
+  color: #0b2545;
   font-size: 2.5rem;
   font-weight: 700;
 }
@@ -80,4 +80,11 @@
   padding: 0.9rem;
   text-transform: uppercase;
   font-weight: 700;
+}
+
+.btn-navy:disabled {
+background: #a7b08f;
+border-color: #a7b08f;
+color: #fff;
+opacity: 1;
 }

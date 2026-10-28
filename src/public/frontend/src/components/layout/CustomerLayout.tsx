@@ -5,7 +5,7 @@ export function CustomerLayout() {
         <div className="flex min-h-svh flex-col">
       <header className="border-b">
         <nav className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
-          <NavLink to="/" className="font-semibold">
+          <NavLink to="/" className="font-semibold text-foreground! no-underline!" >
             Pandrup Pizza &amp; Steak House
           </NavLink>
           <div className="flex gap-4 text-sm">
@@ -31,7 +31,7 @@ function NavItem({ to, end, children }: { to: string; end?: boolean; children: s
     <NavLink
       to={to}
       end={end} // "end" = only active on exactly "/", not on every child route
-      className={({ isActive }) => (isActive ? "font-medium underline underline-offset-4" : "")}
+      className={({ isActive }) => `text-foreground! no-underline! ${isActive ? "font-semibold border-b-2 border-[#586828]!" : "hover:text-[#586828]!"}`}
     >
       {children}
     </NavLink>

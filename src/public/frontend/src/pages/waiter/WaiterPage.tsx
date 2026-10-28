@@ -93,7 +93,7 @@ export default function WaiterPage() {
       <div className="waiter-app">
         <div className="waiter-header">
           <button
-            className="btn btn-navy-outline"
+            className="btn btn-navy-outline btn-lg"
             onClick={() => setSelectedTable(null)}
           >
             ←
