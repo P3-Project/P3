@@ -130,7 +130,7 @@ export default function OrderScreen({ tableNumber, menuItems, lines, onBack, onA
                 if (e.key === "Enter") addTopResult();
                 if (e.key === "Escape") setQuery("");
               }}
-              placeholder="Søg nr. eller navn, fx 24 eller marg"
+              placeholder="Søg nr. eller navn, fx 2 eller marg"
               aria-label="Søg i menuen"
               // iPad: no autocorrect/capitals messing with "marg" or "2a", and the keyboard's
               // return key says "Go"

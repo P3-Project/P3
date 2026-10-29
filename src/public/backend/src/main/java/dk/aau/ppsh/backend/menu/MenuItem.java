@@ -40,7 +40,7 @@ public class MenuItem {
         return itemId;
     }
 
-    public String getNumber() {
+    public String getDishNumber() {
         return dishNumber;
     }
 

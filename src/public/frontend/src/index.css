@@ -146,7 +146,34 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;}
+    @apply border-border outline-ring/50;
+    /* Firefox + Chrome/Edge */
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in oklab, var(--foreground) 22%, transparent) transparent;
+  }
+  
+  /* Safari (incl. iPad) */
+  ::-webkit-scrollbar{
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track{
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb{
+    background: color-mix(in oklab, var(--foreground) 22%, transparent);
+    border-radius: 99px;
+
+    /* transparent border + background-clip = the thumb looks thinner and gloats inside */
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+  ::-webkit-slider-thumb:hover{
+    background-color: color-mix(in oklab, var(--foreground) 40%, transparent);
+  }
+
   body {
     @apply bg-background text-foreground;}
   html {

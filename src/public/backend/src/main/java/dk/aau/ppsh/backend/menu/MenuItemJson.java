@@ -5,8 +5,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public record MenuItemJson(
-        String name,
         String number,
+        String name,
         Integer price,
         String description,
         String category,
