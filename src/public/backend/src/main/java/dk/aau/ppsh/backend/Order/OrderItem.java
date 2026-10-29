@@ -28,6 +28,12 @@ public class OrderItem {
 
     private boolean completed;
 
+    @Column(name = "voided_at")
+    private Instant voidedAt;
+
+    @Column(name = "void_acknowledged")
+    private boolean voidAcknowledged;
+
     protected OrderItem() {}
 
     public OrderItem(RestaurantOrder restaurantOrder, MenuItem menuItem, Integer quantity, String note) {
@@ -50,4 +56,9 @@ public class OrderItem {
     public void setNote(String note) { this.note = note; }
     public void markSent() { this.sentAt = Instant.now(); }
     public void markCompleted() { this.completed = true; }
+    public Instant getVoidedAt() { return voidedAt; }
+    public boolean isVoided() { return voidedAt != null; }
+    public boolean isVoidAcknowledged() { return voidAcknowledged; }
+    public void markVoided() { this.voidedAt = Instant.now(); }
+    public void acknowledgeVoid() { this.voidAcknowledged = true; }
 }

@@ -31,7 +31,8 @@ public final class OrderDtos {
         Integer quantity,
         String note,
         Instant sentAt,
-        boolean completed) {}
+        boolean completed,
+        Instant voidedAt) {}
 
     public record OrderDto(
         Integer orderId,
@@ -54,4 +55,16 @@ public final class OrderDtos {
         Integer quantity,
         String note,
         Instant sentAt) {}
+   
+    // A dish the waiter cancelled after it had been in the kitchen a while
+    public record KitchenVoidDto(
+       Integer orderItemId,
+       Integer orderId,
+       Integer tableNumber,
+       String name,
+       String station,
+       Integer quantity,
+       String note,
+       Instant sentAt,
+       Instant voidedAt) {}
 }

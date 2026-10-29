@@ -16,6 +16,7 @@ import OverviewScreen from "@/pages/kitchen/OverviewScreen";
 import LogInPage from "@/pages/admin/LogIn";
 import NotFound from "@/pages/NotFound";
 import WaiterPage from "@/pages/waiter/WaiterPage";
+import OrderHistory from "@/pages/waiter/OrderHistory";
 
 export const router = createBrowserRouter([
     {
@@ -35,6 +36,7 @@ export const router = createBrowserRouter([
         children: [
             { index: true, element: <WaiterPage />, handle: { fullBleed: true } }, // "/waiter"
             //{ index: true, element: <NewOrder /> }, // "/waiter"
+            { path: "history", element: <OrderHistory /> },
             //{ path: "tables/:tableNumber/new-order", element: <NewOrder /> },
             //{ path: "orders/:orderId", element: <Order /> },
             //{ path: "reservations", element: <Reservations /> }, // Waiters, register phone bookings

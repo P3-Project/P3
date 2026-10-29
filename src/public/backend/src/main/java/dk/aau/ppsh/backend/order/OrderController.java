@@ -20,6 +20,12 @@ public class OrderController {
         return service.list(open);
     }
 
+    // GET /api/orders/history?days=30 -> every order from the last 30 days, newest first
+    @GetMapping("/history")
+    public List<OrderDto> history(@RequestParam(defaultValue = "30") int days) {
+        return service.history(days);
+    }
+
     @GetMapping("/{orderId}")
     public OrderDto one(@PathVariable Integer orderId) { return service.get(orderId); }
 
@@ -54,4 +60,10 @@ public class OrderController {
 
     @PostMapping("/{orderId}/cancel")
     public OrderDto cancel(@PathVariable Integer orderId) { return service.cancel(orderId); }
+
+    // Remove a dish that's already in the kitchen
+    @PostMapping("/{orderId}/items/{orderItemId}/void")
+    public OrderDto voidItem(@PathVariable Integer orderId, @PathVariable Integer orderItemId) {
+        return service.voidItem(orderId, orderItemId);
+    }
 }

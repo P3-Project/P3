@@ -1,9 +1,10 @@
 import { NavLink, Outlet, useMatches } from "react-router";
 
-const links = {
+const links: Record<string, { to: string; label: string; end?: boolean }[]> = {
     Tjener: [
         { to: "/waiter", label: "Borde", end: true },
         { to: "/waiter/reservations", label: "Reservationer" },
+        { to: "/waiter/history", label: "Ordrehistorik" },
     ],
     Admin: [
         { to: "/admin", label: "Reservationer", end: true },
@@ -23,7 +24,7 @@ const links = {
 
 type RouteHandle = { fullBleed?: boolean } | undefined
 
-export function StaffLayout({ title }: { title: keyof typeof links }) {
+export function StaffLayout({ title }: { title: string }) {
     const fullBleed = useMatches().some((match) => (match.handle as RouteHandle)?.fullBleed)
 
     return (
