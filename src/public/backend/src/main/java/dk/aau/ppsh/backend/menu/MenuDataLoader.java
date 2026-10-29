@@ -23,6 +23,8 @@ public class MenuDataLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        // DEBUG: how many dishes are already in the database when the app starts?
+        System.out.println("MenuDataLoader: menu_item has " + repo.count() + " rows");
         if (repo.count() > 0) {
             return;
         }
@@ -32,7 +34,7 @@ public class MenuDataLoader implements CommandLineRunner {
             });
 
             List<MenuItem> entities = items.stream()
-                    .map(j -> new MenuItem(j.name(), j.price(), j.description(), j.category(), j.charcoalGrill()))
+                    .map(j -> new MenuItem(j.number(), j.name(), j.price(), j.category(), j.description(), j.charcoalGrill()))
                     .toList();
 
             repo.saveAll(entities);

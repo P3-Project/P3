@@ -2,6 +2,7 @@ export type Station = "PIZZA" | "GRILL";
 
 export type MenuItem = {
     itemId: number;
+    dishNumber: string | null;
     name: string;
     price: number;
     dishDescription: string | null;

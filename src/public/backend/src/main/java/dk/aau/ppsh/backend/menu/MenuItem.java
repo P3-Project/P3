@@ -11,6 +11,8 @@ public class MenuItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "item_id")
     private Integer itemId;
+    @Column(name = "dish_number")
+    private String dishNumber;
     private String name;
     private Integer price;
     @Column(name = "dish_description")
@@ -24,7 +26,8 @@ public class MenuItem {
 
     protected MenuItem() {}
 
-    public MenuItem(String name, Integer price, String category, String description, Boolean charcoalGrill){
+    public MenuItem(String dishNumber, String name, Integer price, String category, String description, Boolean charcoalGrill){
+        this.dishNumber = dishNumber;
         this.name = name;
         this.price = price;
         this.dishDescription = description;
@@ -35,6 +38,10 @@ public class MenuItem {
 
     public Integer getItemId() {
         return itemId;
+    }
+
+    public String getDishNumber() {
+        return dishNumber;
     }
 
     public String getName() {
