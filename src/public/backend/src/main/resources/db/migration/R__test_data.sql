@@ -25,7 +25,7 @@ INSERT INTO staff (staff_id, staff_number, name, role, active) VALUES
     (2, 'S002', 'Mads Nielsen',  'WAITER',  TRUE),
     (3, 'S003', 'Sara Hansen',   'KITCHEN', TRUE),
     (4, 'S004', 'Omar Ali',      'KITCHEN', TRUE),
-    (5, 'S005', 'Bilal Kayatuz', 'KITCHEN', FALSE);
+    (5, 'S005', 'Bilal Kayatuz', 'KITCHEN', TRUE);
 
 -- ---------- Reservations ----------
 
@@ -36,13 +36,3 @@ INSERT INTO reservation (customer_name, customer_phone, res_date, res_time, numb
 INSERT INTO reservation_table (reservation_id, table_number) VALUES
     (1, 6),   -- Jens: table 6 (4 seats)
     (2, 10);  -- Anna: table 10 (2 seats)
-
-
--- ---------- Orders (one open order per table, like the OrderService requires) ----------
-
-INSERT INTO customer_order (table_number, staff_id) VALUES
-    (1, 2),   -- order 1: grill only
-    (3, 2),   -- order 2: mixed pizza + grill
-    (4, 2),   -- order 3: grill, 12 minutes old (yellow timer)
-    (5, 2),   -- order 4: pizza only, 16 minutes old (red timer)
-    (7, 2);   -- order 5: mixed, one item NOT sent yet
