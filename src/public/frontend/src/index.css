@@ -7,40 +7,28 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --border: oklch(0.922 0 0);
-  --accent: oklch(0.97 0 0);
-  
-  --background: oklch(1 0 0);
+  --radius: 0.625rem;
 
-  --foreground: oklch(0.145 0 0);
+  --background: #fff8f1;                      /* light warm cream page */
+  --foreground: #1f1411;                      /* dark charcoal text */
+  --card: #ffffff;                            /* white cards on the cream */
+  --card-foreground: #1f1411;
+  --popover: #ffffff;
+  --popover-foreground: #1f1411;
 
-  --card: oklch(1 0 0);
-
-  --card-foreground: oklch(0.145 0 0);
-
-  --popover: oklch(1 0 0);
-
-  --popover-foreground: oklch(0.145 0 0);
-
-  --primary: oklch(0.205 0 0);
-
-  --primary-foreground: oklch(0.985 0 0);
-
-  --secondary: oklch(0.97 0 0);
-
-  --secondary-foreground: oklch(0.205 0 0);
-
-  --muted: oklch(0.97 0 0);
-
-  --muted-foreground: oklch(0.556 0 0);
-
-  --accent-foreground: oklch(0.205 0 0);
-
+  --primary: #586828;                         /* olive: buttons, active states */
+  --primary-foreground: #ffffff;              /* white text on olive */
+  --secondary: oklch(0.95 0.01 60);
+  --secondary-foreground: #1f1411;
+  --muted: oklch(0.95 0.01 60);               /* warm light grey backgrounds */
+  --muted-foreground: oklch(0.48 0.02 40);    /* warm grey secondary text */
+  --accent: oklch(0.95 0.01 60);
+  --accent-foreground: #1f1411;
   --destructive: oklch(0.577 0.245 27.325);
 
-  --input: oklch(0.922 0 0);
-
-  --ring: oklch(0.708 0 0);
+  --border: oklch(0.9 0.012 60);              /* warm light borders */
+  --input: oklch(0.9 0.012 60);
+  --ring: #586828;                            /* focus outline in olive */  
 
   --chart-1: oklch(0.87 0 0);
 
@@ -51,8 +39,6 @@
   --chart-4: oklch(0.371 0 0);
 
   --chart-5: oklch(0.269 0 0);
-
-  --radius: 0.625rem;
 
   --sidebar: oklch(0.985 0 0);
 

@@ -32,8 +32,9 @@ export function MenuList() {
           <div className="md:grid md:grid-cols-[14rem_1fr] md:gap-12">
             {/* ---------- Desktop: sidebar ---------- */}
             <nav aria-label="Kategorier" className="hidden md:block">
-              {/* sticky: the list stays in view while scrolling long categories like Pizza */}
-              <ul className="sticky top-8 space-y-0.5">
+              {/* sticky: the list stays in view while scrolling long categories like Pizza.
+                  top-24 = below the sticky site header (h-16) plus some air */}
+              <ul className="sticky top-24 space-y-0.5">
                 {categories.map((category) => {
                   const isActive = category === active;
                   return (
@@ -62,7 +63,7 @@ export function MenuList() {
                 The two [..] classes hide the scrollbar (Firefox / Chrome+Safari) but keep swiping. */}
             <nav
               aria-label="Kategorier"
-              className="sticky top-0 z-10 -mx-4 mb-8 flex gap-6 overflow-x-auto border-b bg-background px-4 [scrollbar-width:none] md:hidden [&::-webkit-scrollbar]:hidden"
+              className="sticky top-16 z-10 -mx-4 mb-8 flex gap-6 overflow-x-auto border-b bg-background px-4 [scrollbar-width:none] md:hidden [&::-webkit-scrollbar]:hidden"
             >
               {categories.map((category) => {
                 const isActive = category === active;
