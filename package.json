@@ -11,7 +11,7 @@
   "private": true,
   "scripts": {
     "dev": "concurrently -n backend,frontend -c blue,green \"npm:dev:backend\" \"npm:dev:frontend\"",
-    "dev:backend": "cd src/public/backend && mvnw spring-boot:run",
+    "dev:backend": "node -e \"require('child_process').spawn(process.platform === 'win32' ? 'mvnw.cmd' : './mvnw', ['spring-boot:run'], { cwd: 'src/public/backend', stdio: 'inherit', shell: true }).on('exit', c => process.exit(c ?? 0))\"",
     "dev:frontend": "npm --prefix src/public/frontend run dev"
   },
   "dependencies": {
