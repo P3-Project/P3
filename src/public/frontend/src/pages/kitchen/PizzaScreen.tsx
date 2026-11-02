@@ -1,6 +1,5 @@
-import { KitchenBoard } from "@/features/kitchen/KitchenBoard";
+import { KitchenBoard } from "./KitchenBoard";
 
-// Only dishes made at the pizza station
 export default function PizzaScreen() {
-  return <KitchenBoard station="PIZZA" />;
+    return <KitchenBoard station="PIZZA" title="PIZZA KITCHEN" />;
 }
