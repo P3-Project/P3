@@ -1,6 +1,5 @@
-import { KitchenBoard } from "@/features/kitchen/KitchenBoard";
+import { KitchenBoard } from "./KitchenBoard";
 
-// Only dishes made at the grill station
 export default function GrillScreen() {
-  return <KitchenBoard station="GRILL" />;
+    return <KitchenBoard station="GRILL" title="GRILL KITCHEN" />;
 }

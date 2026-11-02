@@ -1,8 +1,12 @@
-// Reuse the real types instead of keeping our own copies.
-// If the backend changes a field, there is only one place to update.
+import type { MenuItem } from "@/features/menu/types";
 export type { MenuItem } from "@/features/menu/types";
-export type { RestaurantTable } from "@/features/tables/useTables";
+export type { RestaurantTable } from "@/features/tables/types";
 
-// One line on an order, e.g. "2 × Margherita, uden løg". Comes straight from the backend now
-// (OrderItemDto in OrderDtos.java) instead of living only in the browser.
-export type { OrderItemDto as OrderLine, OrderDto } from "@/features/orders/history";
+// Én linje på en ordre, fx "2 × Margherita, uden løg"
+export type OrderLine = {
+  lineId: number;
+  item: MenuItem;
+  quantity: number;
+  note: string;
+  sentAt: string | null; // null = ikke sendt til køkkenet endnu
+};
