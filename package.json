@@ -1,22 +1,10 @@
 {
-  "//": [
-    "Root package.json - only used to start backend and frontend together.",
-    "First time: run 'npm install' here AND in src/public/frontend.",
-    "Then run 'npm run dev' from the project root to start both:",
-    "  - backend:  Spring Boot on http://localhost:8080 (also starts the Postgres container via Docker)",
-    "  - frontend: Vite/React on http://localhost:5173 (/api calls are proxied to the backend)",
-    "Ctrl+C stops both. Mac/Linux: change 'mvnw' to './mvnw' in dev:backend."
-  ],
-  "name": "p3",
+  "name": "p3-root",
   "private": true,
   "scripts": {
     "dev": "concurrently -n backend,frontend -c blue,green \"npm:dev:backend\" \"npm:dev:frontend\"",
-    "dev:backend": "node -e \"require('child_process').spawn(process.platform === 'win32' ? 'mvnw.cmd' : './mvnw', ['spring-boot:run'], { cwd: 'src/public/backend', stdio: 'inherit', shell: true }).on('exit', c => process.exit(c ?? 0))\"",
-    "dev:frontend": "npm --prefix src/public/frontend run dev"
-  },
-  "dependencies": {
-    "@fontsource-variable/dm-sans": "^5.3.0",
-    "@fontsource-variable/fraunces": "^5.3.0"
+    "dev:backend": "node -e \"require('child_process').spawn(process.platform === 'win32' ? 'mvnw.cmd' : './mvnw', ['spring-boot:run'], { cwd: 'src/backend', stdio: 'inherit', shell: true }).on('exit', c => process.exit(c ?? 0))\"",
+    "dev:frontend": "npm --prefix src/frontend run dev"
   },
   "devDependencies": {
     "concurrently": "^9.0.0"
