@@ -4,6 +4,7 @@ import java.io.InputStream;
 import java.util.List;
 
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 
@@ -11,6 +12,7 @@ import tools.jackson.core.type.TypeReference;
 import tools.jackson.databind.json.JsonMapper;
 
 @Component
+@Order(1) // Runs before TestOrderSeeder (@Order(2)), so the menu exists when orders are created
 public class MenuDataLoader implements CommandLineRunner {
 
     private final MenuItemRepository repo;

@@ -12,15 +12,21 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.time.Duration;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
 // All the rules about orders live here, the controllers only translate HTTP.
 @Service
-@Transactional 
+@Transactional
 public class OrderService {
     private static final Set<String> CAN_TAKE_ORDERS = Set.of("WAITER", "MANAGER");
+    // A dish cancelled after this long in the kitchen gets a notice on the kitchen
+    // screen
+    private static final Duration LONG_IN_KITCHEN = Duration.ofMinutes(3);
 
     private final RestaurantOrderRepository orders;
     private final OrderItemRepository orderItems;
@@ -29,7 +35,7 @@ public class OrderService {
     private final MenuItemRepository menu;
 
     public OrderService(RestaurantOrderRepository orders, OrderItemRepository orderItems,
-                        RestaurantTableRepository tables, StaffRepository staff, MenuItemRepository menu) {
+            RestaurantTableRepository tables, StaffRepository staff, MenuItemRepository menu) {
         this.orders = orders;
         this.orderItems = orderItems;
         this.tables = tables;
@@ -42,8 +48,8 @@ public class OrderService {
     @Transactional(readOnly = true)
     public List<OrderDto> list(boolean openOnly) {
         List<RestaurantOrder> found = openOnly
-            ? orders.findByClosedAtIsNullAndCancelledAtIsNullOrderByCreatedAtAsc()
-            : orders.findAllByOrderByCreatedAtDesc();
+                ? orders.findByClosedAtIsNullAndCancelledAtIsNullOrderByCreatedAtAsc()
+                : orders.findAllByOrderByCreatedAtDesc();
         return found.stream().map(OrderService::toDto).toList();
     }
 
@@ -55,32 +61,42 @@ public class OrderService {
     @Transactional(readOnly = true)
     public List<KitchenItemDto> kitchenQueue(String station) {
         return orderItems.findPendingForKitchen().stream()
-            // no station = everything; otherwise only dishes made at that station
-            .filter(oi -> station == null || station.equalsIgnoreCase(oi.getMenuItem().getStation()))
-            .map(oi -> new KitchenItemDto(
-                oi.getOrderItemId(),
-                oi.getRestaurantOrder().getOrderId(),
-                oi.getRestaurantOrder().getRestaurantTable().getTableNumber(),
-                oi.getMenuItem().getName(),
-                oi.getMenuItem().getStation(),
-                oi.getQuantity(),
-                oi.getNote(),
-                oi.getSentAt()))
-            .toList();
+                // no station = everything; otherwise only dishes made at that station
+                .filter(oi -> station == null || station.equalsIgnoreCase(oi.getMenuItem().getStation()))
+                .map(oi -> new KitchenItemDto(
+                        oi.getOrderItemId(),
+                        oi.getRestaurantOrder().getOrderId(),
+                        oi.getRestaurantOrder().getRestaurantTable().getTableNumber(),
+                        oi.getMenuItem().getName(),
+                        oi.getMenuItem().getStation(),
+                        oi.getQuantity(),
+                        oi.getNote(),
+                        oi.getSentAt()))
+                .toList();
+    }
+
+    @Transactional(readOnly = true)
+    public List<OrderDto> history(int days) {
+        int safeDays = Math.max(1, Math.min(days, 30)); // between 1 and 30 days back
+        Instant since = Instant.now().minus(safeDays, ChronoUnit.DAYS);
+        return orders.findByCreatedAtAfterOrderByCreatedAtDesc(since).stream()
+                .map(OrderService::toDto)
+                .toList();
     }
 
     // ---------- Waiter actions ----------
 
     public OrderDto create(CreateOrderRequest req) {
         RestaurantTable table = tables.findById(req.tableNumber())
-            .orElseThrow(() -> notFound("Bordet findes ikke"));
+                .orElseThrow(() -> notFound("Bordet findes ikke"));
         Staff waiter = staff.findById(req.waiterId())
-            .orElseThrow(() -> notFound("Medarbejderen findes ikke"));
+                .orElseThrow(() -> notFound("Medarbejderen findes ikke"));
 
         if (!Boolean.TRUE.equals(waiter.getActive()) || !CAN_TAKE_ORDERS.contains(waiter.getRole())) {
             throw conflict("Kun aktive tjenere og ledere kan tage imod ordrer");
         }
-        if (orders.findByRestaurantTableTableNumberAndClosedAtIsNullAndCancelledAtIsNull(table.getTableNumber()).isPresent()) {
+        if (orders.findByRestaurantTableTableNumberAndClosedAtIsNullAndCancelledAtIsNull(table.getTableNumber())
+                .isPresent()) {
             throw conflict("Bord " + table.getTableNumber() + " har allerede en åben ordre");
         }
         return toDto(orders.save(new RestaurantOrder(table, waiter)));
@@ -94,12 +110,13 @@ public class OrderService {
         }
         String note = cleanNote(req.note());
 
-        // Same dish with the same note that has not been sent yet: just raise the quantity
+        // Same dish with the same note that has not been sent yet: just raise the
+        // quantity
         OrderItem existing = order.getItems().stream()
-            .filter(i -> !i.isSent()
-                && i.getMenuItem().getItemId().equals(dish.getItemId())
-                && Objects.equals(i.getNote(), note))
-            .findFirst().orElse(null);
+                .filter(i -> !i.isSent()
+                        && i.getMenuItem().getItemId().equals(dish.getItemId())
+                        && Objects.equals(i.getNote(), note))
+                .findFirst().orElse(null);
         if (existing != null) {
             existing.setQuantity(existing.getQuantity() + req.quantity());
         } else {
@@ -130,7 +147,8 @@ public class OrderService {
     public OrderDto send(Integer orderId) {
         RestaurantOrder order = findOpen(orderId);
         List<OrderItem> unsent = order.getItems().stream().filter(i -> !i.isSent()).toList();
-        if (unsent.isEmpty()) throw conflict("Der er intet nyt at sende til køkkenet");
+        if (unsent.isEmpty())
+            throw conflict("Der er intet nyt at sende til køkkenet");
         unsent.forEach(item -> item.markSent());
         return toDto(order);
     }
@@ -154,8 +172,11 @@ public class OrderService {
 
     public void completeItem(Integer orderItemId) {
         OrderItem item = orderItems.findById(orderItemId).orElseThrow(() -> notFound("Retten findes ikke på ordren"));
-        if (!item.isSent()) throw conflict("Retten er ikke sendt til køkkenet endnu");
-        if (!item.getRestaurantOrder().isOpen()) throw conflict("Ordren er lukket eller annulleret");
+        if (!item.isSent())
+            throw conflict("Retten er ikke sendt til køkkenet endnu");
+        if (!item.getRestaurantOrder().isOpen())
+            throw conflict("Ordren er lukket eller annulleret");
+        if (item.isVoided()) throw conflict("Retten er annulleret");
         item.markCompleted();
     }
 
@@ -167,19 +188,21 @@ public class OrderService {
 
     private RestaurantOrder findOpen(Integer orderId) {
         RestaurantOrder order = find(orderId);
-        if (!order.isOpen()) throw conflict("Ordren er allerede lukket eller annulleret");
+        if (!order.isOpen())
+            throw conflict("Ordren er allerede lukket eller annulleret");
         return order;
     }
 
     private static OrderItem findItem(RestaurantOrder order, Integer orderItemId) {
         return order.getItems().stream()
-            .filter(i -> i.getOrderItemId().equals(orderItemId))
-            .findFirst()
-            .orElseThrow(() -> notFound("Retten findes ikke på ordren"));
+                .filter(i -> i.getOrderItemId().equals(orderItemId))
+                .findFirst()
+                .orElseThrow(() -> notFound("Retten findes ikke på ordren"));
     }
 
     private static void requireNotSent(OrderItem item) {
-        if (item.isSent()) throw conflict("Retten er allerede sendt til køkkenet");
+        if (item.isSent())
+            throw conflict("Retten er allerede sendt til køkkenet");
     }
 
     private static String cleanNote(String note) {
@@ -194,19 +217,59 @@ public class OrderService {
         return new ResponseStatusException(HttpStatus.CONFLICT, msg);
     }
 
+    // Remove a dish that was already sent. Kept in the database (for the history),
+    // but not billed.
+    public OrderDto voidItem(Integer orderId, Integer orderItemId) {
+        RestaurantOrder order = findOpen(orderId);
+        OrderItem item = findItem(order, orderItemId);
+        if (!item.isSent())
+            throw conflict("Retten er ikke sendt endnu");
+        if (item.isVoided())
+            throw conflict("Retten er allerede annulleret");
+        item.markVoided();
+        return toDto(order);
+    }
+
+   @Transactional(readOnly = true)
+   public List<KitchenVoidDto> kitchenVoidNotices(String station) {
+       return orderItems.findUnacknowledgedVoids().stream()
+           .filter(oi -> station == null || station.equalsIgnoreCase(oi.getMenuItem().getStation()))
+           // Removed quickly = the kitchen hasn't started yet, so no notice needed
+           .filter(oi -> Duration.between(oi.getSentAt(), oi.getVoidedAt()).compareTo(LONG_IN_KITCHEN) >= 0)
+           .map(oi -> new KitchenVoidDto(
+               oi.getOrderItemId(),
+               oi.getRestaurantOrder().getOrderId(),
+               oi.getRestaurantOrder().getRestaurantTable().getTableNumber(),
+               oi.getMenuItem().getName(),
+               oi.getMenuItem().getStation(),
+               oi.getQuantity(),
+               oi.getNote(),
+               oi.getSentAt(),
+               oi.getVoidedAt()))
+           .toList();
+   }
+
+   public void acknowledgeVoid(Integer orderItemId) {
+       OrderItem item = orderItems.findById(orderItemId).orElseThrow(() -> notFound("Retten findes ikke"));
+       item.acknowledgeVoid();
+   }
+
     static OrderDto toDto(RestaurantOrder o) {
-        List<OrderItemDto> items = o.getItems().stream().map(i -> new OrderItemDto(
-            i.getOrderItemId(),
-            i.getMenuItem().getItemId(),
-            i.getMenuItem().getName(),
-            i.getMenuItem().getPrice(),
-            i.getQuantity(),
-            i.getNote(),
-            i.getSentAt(),
-            i.isCompleted())).toList();
-        int total = items.stream().mapToInt(i -> (i.price() == null ? 0 : i.price()) * i.quantity()).sum();
+   List<OrderItemDto> items = o.getItems().stream().map(i -> new OrderItemDto(
+       i.getOrderItemId(),
+       i.getMenuItem().getItemId(),
+       i.getMenuItem().getName(),
+       i.getMenuItem().getPrice(),
+       i.getQuantity(),
+       i.getNote(),
+       i.getSentAt(),
+       i.isCompleted(),
+       i.getVoidedAt())).toList();
+   int total = items.stream()
+       .filter(i -> i.voidedAt() == null) // cancelled dishes are not billed
+       .mapToInt(i -> (i.price() == null ? 0 : i.price()) * i.quantity()).sum();
         return new OrderDto(o.getOrderId(), o.getRestaurantTable().getTableNumber(),
-            o.getWaiter().getStaffId(), o.getWaiter().getName(), o.getStatus(),
-            o.getCreatedAt(), o.getClosedAt(), o.getCancelledAt(), total, items);
+                o.getWaiter().getStaffId(), o.getWaiter().getName(), o.getStatus(),
+                o.getCreatedAt(), o.getClosedAt(), o.getCancelledAt(), total, items);
     }
 }

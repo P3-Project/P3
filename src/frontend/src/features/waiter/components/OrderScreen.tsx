@@ -65,7 +65,7 @@ export default function OrderScreen({ tableNumber, menuItems, lines, onBack, onA
 
   // How many of a dish are on the unsent part of the order -> counter on the card
   const countInOrder = (itemId: number) =>
-    lines.filter((l) => l.item.itemId === itemId && l.sentAt === null).reduce((sum, l) => sum + l.quantity, 0);
+    lines.filter((l) => l.itemId === itemId && l.sentAt === null).reduce((sum, l) => sum + l.quantity, 0);
 
   const visibleItems = isSearching ? results : (groups.get(activeCategory) ?? []);
 

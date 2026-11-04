@@ -1,17 +1,17 @@
 import { useFitGrid } from "../hooks/useFitGrid";
-import type { OrderLine, RestaurantTable } from "../types";
+import type { OrderDto, RestaurantTable } from "../types";
 import TableCard from "./TableCard";
 
 type Props = {
   tables: RestaurantTable[];
-  orders: Record<number, OrderLine[]>;
+  openOrders: OrderDto[];
   onSelect: (tableNumber: number) => void;
 };
 
 const GAP = 16; // px between tiles; must match the gap in the style below
 
 // The table overview. Fills the whole area under the nav bar; tiles scale with the number of tables.
-export default function TableGrid({ tables, orders, onSelect }: Props) {
+export default function TableGrid({ tables, openOrders, onSelect }: Props) {
   const { ref, cols, rows } = useFitGrid(tables.length, GAP);
 
   return (
@@ -31,7 +31,9 @@ export default function TableGrid({ tables, orders, onSelect }: Props) {
           <TableCard
             key={table.tableNumber}
             table={table}
-            openLines={(orders[table.tableNumber] ?? []).reduce((sum, l) => sum + l.quantity, 0)}
+            openLines={(openOrders.find((o) => o.tableNumber === table.tableNumber)?.items ?? [])
+              .filter((l) => !l.voidedAt) // cancelled dishes don't count
+              .reduce((sum, l) => sum + l.quantity, 0)}
             onClick={() => onSelect(table.tableNumber)}
           />
         ))}

@@ -1,6 +1,8 @@
 package dk.aau.ppsh.backend.order;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.time.Instant;
 import java.util.List;
 import java.util.Optional;
 
@@ -12,4 +14,7 @@ public interface RestaurantOrderRepository extends JpaRepository<RestaurantOrder
     List<RestaurantOrder> findAllByOrderByCreatedAtDesc();
 
     Optional<RestaurantOrder> findByRestaurantTableTableNumberAndClosedAtIsNullAndCancelledAtIsNull(Integer tableNumber);
+
+    // Orders created after a point in time, newest first. Spring writes the SQL from the name.
+    List<RestaurantOrder> findByCreatedAtAfterOrderByCreatedAtDesc(Instant since);
 }
