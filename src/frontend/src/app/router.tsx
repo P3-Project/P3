@@ -3,6 +3,11 @@ import { createBrowserRouter, Navigate } from "react-router";
 import { CustomerLayout } from "@/components/layout/CustomerLayout";
 import { StaffLayout } from "@/components/layout/StaffLayout";
 
+import OrderHistory from "@/pages/waiter/OrderHistory";
+
+import TablesPage from "@/pages/waiter/TablesPage";
+import TableOrderPage from "@/pages/waiter/TableOrderPage";
+
 import Frontpage from "@/pages/customer/Frontpage";
 import Menupage from "@/pages/customer/Menupage";
 //import TableOverview from "@/pages/waiter/TableOverview";
@@ -15,7 +20,6 @@ import OverviewScreen from "@/pages/kitchen/OverviewScreen";
 //import MenuEdit from "@/pages/admin/MenuEdit";
 import LogInPage from "@/pages/admin/LogIn";
 import NotFound from "@/pages/NotFound";
-import WaiterPage from "@/pages/waiter/WaiterPage";
 
 export const router = createBrowserRouter([
     {
@@ -33,11 +37,10 @@ export const router = createBrowserRouter([
         path: "/waiter",
         element: <StaffLayout title="Tjener" />,
         children: [
-            { index: true, element: <WaiterPage />, handle: { fullBleed: true } }, // "/waiter"
-            //{ index: true, element: <NewOrder /> }, // "/waiter"
-            //{ path: "tables/:tableNumber/new-order", element: <NewOrder /> },
-            //{ path: "orders/:orderId", element: <Order /> },
-            //{ path: "reservations", element: <Reservations /> }, // Waiters, register phone bookings
+            { index: true, element: <TablesPage />, handle: { fullBleed: true } },               // "/waiter"   
+            { path: "history", element: <OrderHistory /> },                                      // "/waiter/history"
+            { path: ":tableNumber", element: <TableOrderPage />, handle: { fullBleed: true } },  // "/waiter/5"
+            //{ path: "reservations", element: <Reservations /> },                               // "/waiter/reservations"
         ],
     },
     {

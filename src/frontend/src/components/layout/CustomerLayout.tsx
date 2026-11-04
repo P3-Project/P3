@@ -1,4 +1,5 @@
 import { NavLink, Outlet } from "react-router";
+import { SiteFooter } from "@/components/layout/SiteFooter";
 
 export function CustomerLayout() {
   return (
@@ -23,16 +24,10 @@ export function CustomerLayout() {
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-10 md:px-6 md:py-14">
         <Outlet />
       </main>
-
-      <footer className="border-t">
-        <div className="mx-auto flex max-w-6xl flex-wrap justify-between gap-2 px-4 py-6 text-sm text-muted-foreground md:px-6">
-          <span>Pandrup Pizza &amp; Steak House</span>
-          <a href="tel:+4598246566" className="hover:text-foreground">
-            Tlf. 98 24 65 66
-          </a>
-        </div>
-      </footer>
+      <SiteFooter/>
     </div>
+
+    
   );
 }
 

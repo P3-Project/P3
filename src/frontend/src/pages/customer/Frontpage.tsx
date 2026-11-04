@@ -8,17 +8,8 @@ import { LunchOfferBanner, LunchOfferCard } from "@/features/offers/components/L
 import { lunchOffer } from "@/features/offers/lunchOffer";
 import { useTimeWindow } from "@/features/offers/useTimeWindow";
 import { formatPrice, toTitleCase } from "@/lib/format";
-
-// ---------------------------------------------------------------------------
-// Restaurant facts in ONE place.
-// Anything left as null is not shown, so the page never shows made-up info.
-// ---------------------------------------------------------------------------
-const INFO = {
-  phoneDisplay: "98 24 65 66",
-  phoneHref: "tel:+4598246566",
-  address: "Bredgade 6B, 9490 Pandrup" as string | null, // from PPSH's current website
-  openingHours: null as { days: string; hours: string }[] | null, // TODO: e.g. [{ days: "Man–Fre", hours: "16–21" }]
-};
+// Same name as before (INFO), so nothing else in the file has to change
+import { RESTAURANT as INFO } from "@/lib/restaurantInfo";
 
 // The three "doors" into the menu. Counts and lowest prices are calculated from the real menu.
 const HIGHLIGHTS = [
@@ -28,6 +19,8 @@ const HIGHLIGHTS = [
 ];
 
 export default function Frontpage() {
+  // Opens Google Maps (app on phones) with the address searched
+  const mapsHref = INFO.address ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(INFO.address)}` : null;
   const menu = useMenu();
   const groups = menu.data ? groupByCategory(menu.data) : null;
 
@@ -125,13 +118,11 @@ export default function Frontpage() {
       {!lunch.isActive && <LunchOfferCard window={lunch} />}
 
       {/* ================= Visit / book ================= */}
-      {/* Two columns only when there is address/opening-hours info to show on the right */}
-      <section
-        className={`grid gap-8 rounded-3xl bg-primary px-6 py-10 text-primary-foreground md:px-12 md:py-14 ${
-          INFO.address || INFO.openingHours ? "md:grid-cols-[1.4fr_1fr]" : ""
-        }`}
-      >
-        <div>
+      {/* overflow-hidden: the map is cut by the card's round corners, so it looks built in.
+          No padding on the section itself. the left column has its own. */}
+      <section className="grid overflow-hidden rounded-3xl bg-primary text-primary-foreground md:grid-cols-2">
+        {/* ---- Left: book a table, address, opening hours ---- */}
+        <div className="self-center px-6 py-10 md:px-12 md:py-16">
           <h2 className="font-heading text-3xl font-medium tracking-tight md:text-4xl">Bestil bord</h2>
           <p className="mt-3 max-w-md opacity-85">
             Vi tager imod bordbestillinger på telefonen. Ring, så finder vi et bord til dig.
@@ -143,34 +134,56 @@ export default function Frontpage() {
             <Phone className="size-5" />
             {INFO.phoneDisplay}
           </a>
+
+          {/* Address + opening hours, under a thin line */}
+          <dl className="mt-10 space-y-5 border-t border-primary-foreground/20 pt-8">
+            {INFO.address && mapsHref && (
+              <div className="flex gap-3">
+                <MapPin className="mt-0.5 size-5 shrink-0 opacity-80" />
+                <div>
+                  <dt className="text-sm opacity-75">Adresse</dt>
+                  <dd>
+                    <a href={mapsHref} target="_blank" rel="noreferrer" className="font-medium hover:underline">
+                      {INFO.address}
+                    </a>
+                  </dd>
+                </div>
+              </div>
+            )}
+            {INFO.openingHours && (
+              <div className="flex gap-3">
+                <Clock className="mt-0.5 size-5 shrink-0 opacity-80" />
+                <div>
+                  <dt className="text-sm opacity-75">Åbningstider</dt>
+                  {INFO.openingHours.map((row) => (
+                    <dd key={row.days} className="flex justify-between gap-6 font-medium">
+                      <span>{row.days}</span>
+                      <span className="tabular-nums">{row.hours}</span>
+                    </dd>
+                  ))}
+                </div>
+              </div>
+            )}
+          </dl>
         </div>
 
-        {/* Only shown when the real info has been filled in at the top of the file */}
-        <dl className="space-y-5 self-center">
-          {INFO.address && (
-            <div className="flex gap-3">
-              <MapPin className="mt-0.5 size-5 shrink-0 opacity-80" />
-              <div>
-                <dt className="text-sm opacity-75">Adresse</dt>
-                <dd className="font-medium">{INFO.address}</dd>
-              </div>
-            </div>
-          )}
-          {INFO.openingHours && (
-            <div className="flex gap-3">
-              <Clock className="mt-0.5 size-5 shrink-0 opacity-80" />
-              <div>
-                <dt className="text-sm opacity-75">Åbningstider</dt>
-                {INFO.openingHours.map((row) => (
-                  <dd key={row.days} className="flex justify-between gap-6 font-medium">
-                    <span>{row.days}</span>
-                    <span className="tabular-nums">{row.hours}</span>
-                  </dd>
-                ))}
-              </div>
-            </div>
-          )}
-        </dl>
+        {/* ---- Right: the map, edge to edge ---- */}
+        {INFO.address && (
+          // relative + min-h: on phones the map gets its own height under the text
+          // on desktop it stretches to the full height of the card
+          <div className="relative min-h-72 md:min-h-full">
+            <iframe
+              title={`Kort over ${INFO.address}`}
+              src={`https://www.google.com/maps?q=${encodeURIComponent(INFO.address)}&z=15&output=embed`}
+              // absolute inset-0: fill the right half completely.
+              // The filter tones Google's bright colours down so they sit better next to the olive green.
+              className="absolute inset-0 size-full border-0 [filter:grayscale(0.6)_sepia(0.15)_contrast(1.05)]"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+          </div>
+        )}
       </section>
     </div>
   );

@@ -30,32 +30,46 @@ export function MenuList() {
         return (
           // Two columns from md and up: 14rem sidebar + the rest. One column on phones.
           <div className="md:grid md:grid-cols-[14rem_1fr] md:gap-12">
+            
             {/* ---------- Desktop: sidebar ---------- */}
             <nav aria-label="Kategorier" className="hidden md:block">
               {/* sticky: the list stays in view while scrolling long categories like Pizza.
                   top-24 = below the sticky site header (h-16) plus some air */}
-              <ul className="sticky top-24 space-y-0.5">
-                {categories.map((category) => {
-                  const isActive = category === active;
-                  return (
-                    <li key={category}>
-                      <button
-                        type="button"
-                        onClick={() => choose(category)}
-                        aria-pressed={isActive}
-                        // Active: tomato text with a small bar on the left. Others: quiet grey.
-                        className={`w-full border-l-2 py-1.5 pl-4 text-left text-sm transition-colors ${
-                          isActive
-                            ? "border-primary font-medium text-primary"
-                            : "border-transparent text-muted-foreground hover:text-foreground"
-                        }`}
-                      >
-                        {category}
-                      </button>
-                    </li>
-                  );
-                })}
-              </ul>
+              <div className="sticky top-24">
+                <p className="mb-3 px-3 text-xs font-medium tracking-widest text-muted-foreground uppercase">
+                  Kategorier
+                </p>
+                <ul className="space-y-1">
+                  {categories.map((category) => {
+                    const isActive = category === active;
+                    const count = groups.get(category)?.length ?? 0;
+                    return (
+                      <li key={category}>
+                        <button
+                          type="button"
+                          onClick={() => choose(category)}
+                          aria-pressed={isActive}
+                          // Active: a small white "card" (same border + shadow as the dish card),
+                          // so it looks connected to the card on the right. Others: quiet, with a hover tint.
+                          className={`flex w-full items-center justify-between gap-3 rounded-xl border px-3 py-2 text-left text-[0.95rem] transition-colors ${
+                            isActive
+                              ? "border-border bg-card font-medium text-primary shadow-sm"
+                              : "border-transparent text-muted-foreground hover:bg-card/60 hover:text-foreground"
+                          }`}
+                        >
+                          <span className="truncate">{category}</span>
+                          {/* how many dishes are in the category, e.g. 59 */}
+                          <span
+                            className={`text-xs tabular-nums ${isActive ? "text-primary/70" : "text-muted-foreground/70"}`}
+                          >
+                            {count}
+                          </span>
+                        </button>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
             </nav>
 
             {/* ---------- Phone: swipeable tabs ---------- */}
@@ -87,7 +101,8 @@ export function MenuList() {
             </nav>
 
             {/* ---------- The dishes ---------- */}
-            <section aria-labelledby="category-heading">
+            <section aria-labelledby="category-heading"
+              className="min-w-0 rounded-3xl border bg-card p-5 shadow-sm md:p-10">
               <header className="mb-8">
                 <h2 id="category-heading" className="font-heading text-3xl font-medium tracking-tight">
                   {active}
