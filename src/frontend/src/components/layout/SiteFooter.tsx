@@ -22,7 +22,7 @@ export function SiteFooter() {
     : null;
 
   return (
-    <footer className="mt-24 bg-foreground text-background">
+    <footer className="mt-24 bg-foreground pb-20 text-background md:pb-0">
       {/* Three columns on desktop, stacked on phones */}
       <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 md:grid-cols-[1.5fr_1fr_1fr] md:px-10">
         {/* ---- Column 1: name, one line about the place, call button ---- */}
@@ -66,7 +66,7 @@ export function SiteFooter() {
                 <dl className="space-y-1">
                   {openingHours.map((row) => (
                     <div key={row.days} className="flex gap-4">
-                      <dt className="w-20 opacity-70">{row.days}</dt>
+                      <dt className="w-32 opacity-70">{row.days}</dt>
                       <dd className="tabular-nums">{row.hours}</dd>
                     </div>
                   ))}

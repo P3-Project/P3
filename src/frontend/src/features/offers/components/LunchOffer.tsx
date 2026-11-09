@@ -72,26 +72,41 @@ export function LunchOfferBanner({ window, phoneHref, phoneDisplay }: { window: 
 export function LunchOfferCard({ window }: { window: Window }) {
   // Before 11 -> "i dag kl. 11", after 15 -> "i morgen kl. 11"
   const next = window.hasStartedToday ? "i morgen" : "i dag";
+  // Sandwich shown first, then comes the rest of the lunch menu
+
+  const items = [{ name: `${offer.title}, frit valg`, price: offer.price }, ...offer.extras];
 
   return (
-    <section aria-labelledby="lunch-card-title" className="flex flex-col gap-5 rounded-2xl border bg-card p-6 sm:flex-row sm:items-center">
-      <div className="grid size-14 shrink-0 place-items-center rounded-2xl bg-primary/10 text-primary">
-        <Sandwich className="size-7" />
-      </div>
+    <section
+      aria-labelledby="lunch-card-title"
+      className="grid gap-8 rounded-3xl border bg-card p-6 md:grid-cols-[1fr_1.4fr] md:p-10"
+    >
+      <div>
 
-      <div className="flex-1">
-        <h2 id="lunch-card-title" className="font-heading text-2xl font-medium">
-          {offer.title} · {formatPrice(offer.price)}
+        <p className="text-sm font-medium tracking-widest text-primary uppercase">Alle dage kl. {hours}</p>
+        <h2 id="lunch-card-title" className="mt-3 font-heading text-3xl font-medium tracking-tight">
+          Frokosttilbud
         </h2>
-        <p className="mt-1 text-muted-foreground">
-          Frit valg: {offer.choices.join(", ")}. {offer.dressing}.
+        <p className="mt-3 text-muted-foreground">Sandwich med frit valg: {offer.choices.join(", ")}. {offer.dressing}.
+        </p>
+        <p className="mt-4 flex items-center gap-2 text-sm font-medium">
+          <Clock className="size-4 text-primary" />
+          Næste gang {next} kl. {offer.startHour}
         </p>
       </div>
 
-      <p className="flex shrink-0 items-center gap-2 text-sm font-medium">
-        <Clock className="size-4 text-primary" />
-        Alle dage kl. {hours} · næste gang {next}
-      </p>
+      {/* Price list with dotted leader lines, same style as "Fra menukortet" */}
+
+      <ul className="space-y-3">
+        {items.map((item) => (
+
+          <li key={item.name} className="flex items-baseline gap-3">
+            <span className="font-medium">{item.name}</span>
+            <span aria-hidden="true" className="flex-1 translate-y-[-0.2em] border-b border-dotted border-foreground/25" />
+            <span className="font-medium tabular-nums">{formatPrice(item.price)}</span>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }
