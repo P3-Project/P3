@@ -91,7 +91,7 @@ export function LunchOfferCard({ window }: { window: Window }) {
         </p>
         <p className="mt-4 flex items-center gap-2 text-sm font-medium">
           <Clock className="size-4 text-primary" />
-          Næste gang {next} kl. {offer.startHour}
+          {window.isActive ? `Serveres nu · til kl. ${offer.endHour}` : `Næste gang ${next} kl. ${offer.startHour}`}
         </p>
       </div>
 
