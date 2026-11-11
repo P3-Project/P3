@@ -103,7 +103,7 @@ export function LunchOfferCard({ window }: { window: Window }) {
           <li key={item.name} className="flex items-baseline gap-3">
             <span className="font-medium">{item.name}</span>
             <span aria-hidden="true" className="flex-1 translate-y-[-0.2em] border-b border-dotted border-foreground/25" />
-            <span className="font-medium tabular-nums">{formatPrice(item.price)}</span>
+            <span className="shrink-0 font-medium whitespace-nowrap tabular-nums">{formatPrice(item.price)}</span>
           </li>
         ))}
       </ul>
