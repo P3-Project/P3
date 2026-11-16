@@ -178,3 +178,15 @@
     @apply bg-background text-foreground;}
   html {
     @apply font-sans;}}
+
+
+
+    html {
+      touch-action: manipulation;
+      overscroll-behavior: none;
+    }
+    button,
+    a {
+      -webkit-touch-callout: none;
+      user-select: none;
+    }
