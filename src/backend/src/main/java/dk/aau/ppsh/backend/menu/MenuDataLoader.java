@@ -1,0 +1,48 @@
+package dk.aau.ppsh.backend.menu;
+
+import java.io.InputStream;
+import java.util.List;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.core.annotation.Order;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.stereotype.Component;
+
+import tools.jackson.core.type.TypeReference;
+import tools.jackson.databind.json.JsonMapper;
+
+@Component
+@Order(1) // Runs before TestOrderSeeder (@Order(2)), so the menu exists when orders are created
+public class MenuDataLoader implements CommandLineRunner {
+
+    private final MenuItemRepository repo;
+    private final JsonMapper jsonMapper;
+
+    public MenuDataLoader(MenuItemRepository repo, JsonMapper jsonMapper) {
+        this.repo = repo;
+        this.jsonMapper = jsonMapper;
+    }
+
+    @Override
+    public void run(String... args) throws Exception {
+        // DEBUG: how many dishes are already in the database when the app starts?
+        System.out.println("MenuDataLoader: menu_item has " + repo.count() + " rows");
+        if (repo.count() > 0) {
+            return;
+        }
+
+        try (InputStream in = new ClassPathResource("data/menu.json").getInputStream()) {
+            List<MenuItemJson> items = jsonMapper.readValue(in, new TypeReference<List<MenuItemJson>>() {
+            });
+
+            List<MenuItem> entities = items.stream()
+                    .map(j -> new MenuItem(j.number(), j.name(), j.price(), j.category(), j.description(), j.charcoalGrill()))
+                    .toList();
+
+            repo.saveAll(entities);
+            System.out.println("Imported " + entities.size() + " menu items from menu.json");
+
+        }
+    }
+
+}
