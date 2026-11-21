@@ -51,7 +51,7 @@ public class ReservationController {
         // POST /api/reservations -> create a reservation
        @PostMapping
        @Transactional // enten bliver alt gemt eller også bliver intet gemt
-    public Reservation create(@Valid @RequestBody Reservation reservation) {
+    public Reservation create(@Valid @RequestBody ReservationRequest req) {
         
         // lav en ny liste og tag hvert bordnummer med en gang 
         
@@ -67,14 +67,14 @@ public class ReservationController {
     }
     
     Reservation reservation = new Reservation(); 
-    reservation.setCustomerName(req.customername()); 
-    reservation.setCustomerPhone(req.customerphone()); 
+    reservation.setCustomerName(req.customerName()); 
+    reservation.setCustomerPhone(req.customerPhone()); 
     reservation.setResDate(req.resDate()); 
     reservation.setResTime(req.resTime()); 
     reservation.setDuration(120); 
-    reservation.setNumberofGuests(req.numberOfGuests()); 
+    reservation.setNumberOfGuests(req.numberOfGuests()); 
     reservation.setSpecialRequest(req.specialRequest()); 
-    reservation.setStatus("Booked")  
+    reservation.setStatus("booked");
     repo.save(reservation); 
 
 
