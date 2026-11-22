@@ -52,4 +52,57 @@ public interface ReservationRepository extends JpaRepository<Reservation, Intege
               AND r.status NOT IN ('cancelled', 'no_show')
             """)
     int countExpectedGuests(@Param("resDate") LocalDate resDate);
+        
+
+/** 
+ * Each UPDATE changes the row only when it is in the expected status, 
+ * and returns the rows, that are changed. 0 is when the change was rejected. 
+ * clearAutomatically is when the service reads the reservation again after and gets a new value, not the old copy of JPA.
+*/
+
+@Modifying(clearAutomatically = true)
+@Query(value = """
+        UPDATE reservation
+        SET status = :toStatus
+        WHERE reservation_id = :reservationId
+        AND status = :fromStatus
+        """, nativeQuery = true)
+
+int changeStatus(@Param("reservationId") int reservationId,
+                 @Param("fromStatus") String fromStatus,
+                 @Param("toStatus") String toStatus);
+
+
+/** When guests arrives: booked ---> seated, only when the reservation has an available table. */
+@Modifying(clearAutomatically = true)
+@Query(value = """
+        UPDATE reservation
+        SET status = 'seated'
+        WHERE reservation_id = :reservationId
+        AND status = 'booked'
+        AND EXISTS (SELECT 1 FROM reservation_table
+                        WHERE reservation_id = :reservationId)
+        """, nativeQuery = true)
+
+        int markSeated(@Param("reservationId") int reservation_id);
+
+
+/** Change of the details. Can only be done while the reservation is still booked */
+Modifying(clearAutomatically = true)
+@Query(value = """
+        UPDATE reservation
+        SET customer_name       = :customerName,
+            customer_phone      = :customerPhone,
+            res_date            = :resDate,
+            res_time            = :resTime,
+            duration            = :duration,
+            number_of_guests    = :numberOfGuests,
+            special_request     = :specialRequest
+                        WHERE reservation_id = :reservationId)
+        """, nativeQuery = true)
+
+        int markSeated(@Param("reservationId") int reservation_id);
+
+
+
 }
