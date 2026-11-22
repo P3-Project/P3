@@ -67,7 +67,7 @@ export default function UpcomingReservations({
                         >
 
                         <td className="px-4 py-6">
-                            {reservation.resTime.slice(0, 5)}
+                            {reservation.resDate.slice(5)} {reservation.resDate.slice(0, 5)} {/* "11-25 18:00" */}
                         </td>
                                     
                         <td className="px-4 py-6">

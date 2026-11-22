@@ -23,16 +23,23 @@ public class ReservationController {
 
     public ReservationController(ReservationRepository repo) { this.repo = repo; }
 
-    // GET /api/reservations             -> all reservations
-    // GET /api/reservations?date=2026-10-12 -> that day's, sorted by time
+    /// GET /api/reservations                  -> all reservations
+    // GET /api/reservations?date=2026-10-12  -> only that day
+    // GET /api/reservations?from=2026-10-12  -> that day and every day after
     @GetMapping
     public List<Reservation> all(
             @RequestParam(required = false)
-            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
-        if (date == null) {
-            return repo.findAll();
+            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date,
+            @RequestParam(required = false)
+            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate from) {
+
+        if (date != null) {
+            return repo.findByResDateOrderByResTime(date);           // exact day
         }
-        return repo.findByResDateOrderByResTime(date);
+        if (from != null) {
+            return repo.findByResDateGreaterThanEqualOrderByResDateAscResTimeAsc(from); // upcoming
+        }
+        return repo.findAll();                                        // everything
     }
 
         // POST /api/reservations -> create a reservation (without tables)

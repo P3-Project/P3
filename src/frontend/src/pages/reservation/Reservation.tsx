@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import UpcomingReservations from "./UpcomingReservations";
+import EarlierReservations from "./EarlierReservations";
 import { getReservations } from "../../features/Reservation/reservationApi";
 
 export default function Reservation() {
@@ -18,5 +19,9 @@ export default function Reservation() {
   if (isLoading) return <p>Indlæser reservationer...</p>;
   if (isError) return <p>Kunne ikke hente reservationer.</p>;
 
-  return <UpcomingReservations reservations={reservations} />;
+  return <>
+    <UpcomingReservations reservations={reservations} />
+    {/* Passes today's date so the panel fetches everything before it */}
+    <EarlierReservations today={date} />
+  </>;
 }
