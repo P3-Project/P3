@@ -16,6 +16,13 @@ public class ReservationTableId implements Serializable {
     private Integer tableNumber;
     
 
+    protected ReservationTableId() {}
+
+    public ReservationTableId(Integer reservationId, Integer tableNumber){ 
+        this.reservationId = reservationId; 
+        this.tableNumber = tableNumber; 
+    }
+ 
 public Integer getReservationId() {return reservationId;}
 public Integer getTableNumber() {return tableNumber;}
 
