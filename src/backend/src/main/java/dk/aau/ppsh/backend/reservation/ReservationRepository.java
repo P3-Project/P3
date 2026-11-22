@@ -6,6 +6,7 @@ import java.util.Collection;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
@@ -88,7 +89,7 @@ int changeStatus(@Param("reservationId") int reservationId,
 
 
 /** Change of the details. Can only be done while the reservation is still booked */
-Modifying(clearAutomatically = true)
+@Modifying(clearAutomatically = true)
 @Query(value = """
         UPDATE reservation
         SET customer_name       = :customerName,
@@ -98,11 +99,16 @@ Modifying(clearAutomatically = true)
             duration            = :duration,
             number_of_guests    = :numberOfGuests,
             special_request     = :specialRequest
-                        WHERE reservation_id = :reservationId)
+                WHERE reservation_id = :reservationId
+                AND status = 'booked'
         """, nativeQuery = true)
-
-        int markSeated(@Param("reservationId") int reservation_id);
-
-
+        int updateBooked(@Param("reservationId") int reservationId,
+                         @Param("customerName") String customerName,
+                         @Param("customerPhone") String customerPhone,
+                         @Param("resDate") LocalDate resDate,
+                         @Param("resTime") LocalTime resTime,
+                         @Param("duration") int duration,
+                         @Param("numberOfGuests") int numberOfGuests,
+                         @Param("specialRequest") String specialRequest);
 
 }
