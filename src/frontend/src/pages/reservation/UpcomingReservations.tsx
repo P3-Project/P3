@@ -1,11 +1,5 @@
-import { Pencil, Trash2 } from "lucide-react";
-type Reservation = {
-  id: number;
-  time: string;
-  name: string;
-  guests: number;
-  table: number;
-};
+
+import type { Reservation } from "../../features/Reservation/reservationApi";
 
 type UpcomingReservationsProps = {
   reservations: Reservation[];
@@ -18,7 +12,7 @@ export default function UpcomingReservations({
     const totalReservations = reservations.length;
 
     const totalGuests = reservations.reduce(
-        (total, reservation) => total + reservation.guests,
+        (total, reservation) => total + reservation.numberOfGuests,
         0
     );
 
@@ -61,42 +55,39 @@ export default function UpcomingReservations({
                         className="px-4 py-8 text-center text-gray-500"
                         >
                             Ingen kommende reservationer
-                            </td>
-                            </tr>
-                        )}
-                        
+                        </td>
+                    </tr>
+                )}
+                
                 {reservations.map((reservation) => (
+                    
                     <tr
-                    key={reservation.id}
-                    className="border-b border-gray-200 hover:bg-gray-50"
-                    >
-                        <td className="px-4 py-6">{reservation.time}</td>
-                        <td className="px-4 py-6">{reservation.name}</td>
-                        <td className="px-4 py-6">{reservation.guests}</td>
-                        <td className="px-4 py-6">{reservation.table}</td>
-                        <td className="px-4 py-6">
-                            <div className="flex items-center gap-2">
-                                <button
-                                type="button"
-                                aria-label={`Rediger reservation for ${reservation.name}`}
-                                className="rounded-xl border border-gray-200 p-2 text-[#556B2F] hover:bg-gray-50"
-                                >
-                                    <Pencil size={18} />
-                                    </button>
-                                    
-                                    <button
-                                    type="button"
-                                    aria-label={`Slet reservation for ${reservation.name}`}
-                                    className="rounded-xl border border-gray-200 p-2 text-gray-500 hover:bg-gray-50"
-                                    >
-                                        <Trash2 size={18} />
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                    ))}
+                        key={reservation.reservationId}
+                        className="border-b border-gray-200 hover:bg-gray-50"
+                        >
 
+                        <td className="px-4 py-6">
+                            {reservation.resTime.slice(0, 5)}
+                        </td>
+                                    
+                        <td className="px-4 py-6">
+                            {reservation.customerName}
+                        </td>
+                        
+                        <td className="px-4 py-6">
+                            {reservation.numberOfGuests}
+                        </td>
+
+                        <td className="px-4 py-6">–</td>
+                        
+                        <td className="px-4 py-6">
+                            {reservation.specialRequest || "–"}
+                        </td>
+                    </tr>
+                ))}
+                
                 </tbody>
+
         </table>
         
         <div className="border-t border-gray-200 px-4 py-5 text-sm text-gray-500">
