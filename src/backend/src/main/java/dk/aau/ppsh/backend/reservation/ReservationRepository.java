@@ -10,4 +10,7 @@ public interface ReservationRepository extends JpaRepository<Reservation, Intege
     // Spring writes the SQL from the method name:
     // SELECT * FROM reservation WHERE res_date = ? ORDER BY res_time
     List<Reservation> findByResDateOrderByResTime(LocalDate resDate);
+
+    // SELECT * FROM reservation WHERE res_date >= ? ORDER BY res_date, res_time
+    List<Reservation> findByResDateGreaterThanEqualOrderByResDateAscResTimeAsc(LocalDate from);
 }
