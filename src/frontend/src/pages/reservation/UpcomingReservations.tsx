@@ -49,7 +49,7 @@ export default function UpcomingReservations({
                 <th className="px-4 py-4 text-left">Navn</th>
                 <th className="px-4 py-4 text-left">Gæster</th>
                 <th className="px-4 py-4 text-left">Bord</th>
-                <th className="px-4 py-4 text-left">Handlinger</th>
+                <th className="px-4 py-4 text-left">Ønsker</th>
                 </tr>
             </thead>
             
