@@ -16,6 +16,7 @@ public interface ReservationRepository extends JpaRepository<Reservation, Intege
     // SELECT * FROM reservation WHERE res_date = ? ORDER BY res_time
     List<Reservation> findByResDateOrderByResTime(LocalDate resDate);
 
+
     /**
      * The same day, but without the statuses the caller is not interested in.
      * The waiter's view passes "cancelled" and "no_show" so that the list only
@@ -110,5 +111,12 @@ int changeStatus(@Param("reservationId") int reservationId,
                          @Param("duration") int duration,
                          @Param("numberOfGuests") int numberOfGuests,
                          @Param("specialRequest") String specialRequest);
+
+
+    // SELECT * FROM reservation WHERE res_date >= ? ORDER BY res_date, res_time
+    List<Reservation> findByResDateGreaterThanEqualOrderByResDateAscResTimeAsc(LocalDate from);
+    // SELECT * FROM reservation where res_date < ? ORDER BY res_date, Desc, res_time. 
+    List<Reservation> findByResDateLessThanOrderByResDateDescResTimeDesc(LocalDate before);
+
 
 }

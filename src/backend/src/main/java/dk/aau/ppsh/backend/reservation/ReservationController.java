@@ -29,15 +29,18 @@ public class ReservationController {
 
     public ReservationController(ReservationService service) { this.service = service; }
 
-    // GET /api/reservations             -> all reservations
-    // GET /api/reservations?date=2026-10-12 -> that day's, sorted by time
+    /// GET /api/reservations                  -> all reservations
+    // GET /api/reservations?date=2026-10-12  -> only that day
+    // GET /api/reservations?from=2026-10-12  -> that day and every day after
     @GetMapping
     public List<ReservationDto> all(
-            @RequestParam(required = false)
-            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date,
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date, 
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate from,
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate before,         
             @RequestParam(defaultValue = "false") boolean upcoming) {
-                return service.list(date, upcoming);
+            return service.list(date, from, before, upcoming);
             }
+
 
 // POST /api/reservations -> "Gem Reservation" create a reservation (without tables)
   @PostMapping

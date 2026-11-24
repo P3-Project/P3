@@ -16,7 +16,7 @@ import Menupage from "@/pages/customer/Menupage";
 import PizzaScreen from "@/pages/kitchen/PizzaScreen";
 import GrillScreen from "@/pages/kitchen/GrillScreen";
 import OverviewScreen from "@/pages/kitchen/OverviewScreen";
-//import Reservation from "@/pages/admin/reservations";
+import Reservation from "@/pages/reservation/Reservation";
 //import MenuEdit from "@/pages/admin/MenuEdit";
 import LogInPage from "@/pages/admin/LogIn";
 import NotFound from "@/pages/NotFound";
@@ -40,7 +40,7 @@ export const router = createBrowserRouter([
             { index: true, element: <TablesPage />, handle: { fullBleed: true } },               // "/waiter"   
             { path: "history", element: <OrderHistory /> },                                      // "/waiter/history"
             { path: ":tableNumber", element: <TableOrderPage />, handle: { fullBleed: true } },  // "/waiter/5"
-            //{ path: "reservations", element: <Reservations /> },                               // "/waiter/reservations"
+            { path: "reservations", element: <Reservation /> },                               // "/waiter/reservations"
         ],
     },
     {

@@ -58,18 +58,20 @@ public class ReservationService {
             // a cancelled, no-show or completed reservations are dropped off the list. 
 
             @Transactional (readOnly = true)
-            public List<ReservationDto> list(LocalDate date, boolean upcoming) {
-            
+            public List<ReservationDto> list(LocalDate date, LocalDate from, LocalDate before, boolean upcoming) {
                     List<Reservation> found; 
-                    if (date == null) {
+                    if (date != null && upcoming) {
+                        found = reservations.findByResDateAndStatusNotInOrderByResTime(    
+                        date, List.of("cancelled", "no_show", "completed"));
+                    } else if (date != null) {
+                        found = reservations.findByResDateOrderByResTime(date);
+                    } else if (from != null) {
+                        found = reservations.findByResDateGreaterThanEqualOrderByResDateAscResTimeAsc(from);
+                    } else if (before != null) {
+                        found = reservations.findByResDateLessThanOrderByResDateDescResTimeDesc(before);
+                    } else {
                         found = reservations.findAll();
-                    } else if (upcoming) {
-                        found = reservations.findByResDateAndStatusNotInOrderByResTime(
-                                date, List.of("cancelled", "no_show", "completed"));
-                        }else {
-                            found = reservations.findByResDateOrderByResTime(date);
-
-                        }
+                    }
             // One small query per reservation for its tables. PPSH has 1-10 reservations a day according to (Appendix B), 
             // so this will not be changed. 
                         return found.stream().map(this::toDto).toList();
